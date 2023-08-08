@@ -1,0 +1,26 @@
+<div class="custom-registration page-width">
+  <h2>Create account</h2>
+  {% form 'create_customer' %}
+    {{ form.errors | default_errors }}
+
+    <div class="first-name">
+      <input type="text" name="customer[first_name]" placeholder="First Name" required>
+    </div>
+
+    <div class="last-name">
+      <input type="text" name="customer[last_name]" placeholder="Last Name" required>
+    </div>
+
+    <div class="email">
+      <input type="email" name="customer[email]" placeholder="Email" required>
+    </div>
+
+    <div class="password">
+      <input type="password" name="customer[password]" placeholder="Password" required>
+    </div>
+
+    <div class="submit">
+      <input type="submit" value="Create">
+    </div>
+  {% endform %}
+</div>

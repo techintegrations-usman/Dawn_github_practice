@@ -1,0 +1,12 @@
+<div class="custom-login page-width">
+  <h2>Login</h2>
+  {% form 'customer_login' %}
+    {{ form.errors | default_errors }}
+    <div class="input-fields">
+      <input type="email" name="customer[email]" placeholder="Email">
+
+      <input type="password" name="customer[password]" placeholder="Password">
+      <button type="submit">Login</button>
+    </div>
+  {% endform %}
+</div>
