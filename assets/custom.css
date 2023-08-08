@@ -1,0 +1,255 @@
+.custom-banner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.banner-image1,
+.banner-image2 {
+  flex: 0 0 50%;
+}
+
+.banner-image1 img,
+.banner-image2 img {
+  width: 100%;
+  max-width: 100%;
+}
+/*/////Custom Menu Section start////////*/
+.Custom-menu-section h2 {
+  text-align: center;
+  font-size: 32px;
+}
+nav.custom-nav {
+  background-color: powderblue;
+  padding: 1px 20px;
+}
+ul li {
+  list-style: none;
+}
+.menu-links li a {
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+ul.menu-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 50px;
+  justify-content: center;
+}
+
+li.menu-item {
+  position: relative;
+}
+
+ul.submenu {
+  position: absolute;
+  display: none;
+  background-color: powderblue;
+  top: 100%;
+  left: 50%;
+  width: 150px;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+li.menu-item:hover > .submenu {
+  display: block;
+}
+ul.subsubmenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 80%;
+  padding: 20px;
+  background-color: powderblue;
+  z-index: 1;
+}
+.submenu li:hover > .subsubmenu {
+  display: block;
+}
+/*/ ////Custom Menu Section End////////*/
+
+/*/ ////Custom ProductHandle Section START////////*/
+
+.custom-producthandle {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-data {
+  flex: 0 0 33.33%;
+}
+
+.product-data .product-image img {
+  width: 100%;
+  max-width: 100%;
+}
+.product-image {
+  line-height: 0px;
+}
+
+/*/ ////Custom ProductHandle Section END////////*/
+
+/*/ ////Custom Popup Section Section Start////////*/
+
+.custom-popup-section {
+  max-width: 290px;
+  padding: 10px;
+}
+
+.top-heading {
+  background-color: #e74011;
+}
+
+.top-heading p {
+  font-size: 18px;
+  color: white;
+  font-weight: bold;
+  padding: 0px 10px;
+}
+.bottom-content .phone-contact,
+.whatsapp-contact,
+.mail-contact,
+.add-contact {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/*/ ////Custom Popup Section  END////////*/
+
+/*/ ////Custom Product Page  START////////*/
+.custom-product-template {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
+}
+
+.product-images {
+  flex: 0 0 50%;
+}
+
+.product-info {
+  flex: 0 0 50%;
+  padding: 0 30px;
+}
+
+.product-images img {
+  width: 100%;
+  max-width: 100%;
+}
+.product-info h3 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.product-info span.variant-sku {
+  font-size: 18px;
+  color: black;
+  padding: 25px 0;
+}
+
+.product-info p {
+  margin: 0;
+  font-size: 18px;
+}
+.product-option {
+  margin: 20px 0;
+}
+
+/*/ ////Custom Product Page  END////////*/
+
+/*/ ////Custom Login Page  START////////*/
+.custom-login {
+  max-width: 600px;
+  text-align: center;
+}
+.custom-login h2 {
+  font-size: 48px;
+}
+.input-fields input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  box-shadow: none;
+}
+
+.input-fields input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0px;
+  outline: none;
+  box-shadow: none;
+}
+
+.input-fields button {
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+}
+
+/*/ ////Custom Login  Page  END////////*/
+
+/*/ ////Custom Registran Page  Start////////*/
+.custom-registration {
+  max-width: 600px;
+}
+
+.custom-registration h2 {
+  font-size: 48px;
+  text-align: center;
+}
+.first-name input[type="text"],
+.last-name input,
+.email input,
+.password input {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  box-shadow: none;
+  line-height: 25px;
+  margin: 10px 0;
+}
+.custom-registration .submit input {
+  padding: 12px 20px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/*/ ////Custom Registran  Page  END////////*/
+
+/*/ ////Custom Message Section START////////*/
+
+.custom-message-banner .banner-image img {
+  width: 100%;
+  max-width: 100%;
+}
+.banner-image {
+  line-height: 0;
+}
+.custom-message-banner {
+  position: relative;
+}
+
+.banner-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.banner-info .banner-content p {
+  text-align: center;
+  font-size: 48px;
+  color: white;
+}
+/*/ ////Custom Message Section END////////*/
