@@ -1,0 +1,85 @@
+<div class="custom-popup-section ">
+  <div class="top-heading">
+    <p>Personal expert advice</p>
+  </div>
+  <div class="bottom-content">
+    <div class="phone-contact">
+      {% render 'phone-icon' %}
+      <div class="contact-info">
+        <p class="option-text">phone contact</p>
+        <p class="option">{{ section.settings.phone_contact }}</p>
+      </div>
+    </div>
+
+    <div class="whatsapp-contact">
+      {% render 'whatsapp-icon' %}
+      <div class="whatsapp-info">
+        <p class="option-text">Whatsapp contact</p>
+        <p class="option">{{ section.settings.whatsapp_contact }}</p>
+      </div>
+    </div>
+    {{ section.settings.schedule_text }}
+    <div class="mail-contact">
+      {% render 'mail-icon' %}
+      <div class="mail-info">
+        <p class="option-text">e-mail contact</p>
+        <p class="option">{{ section.settings.email }}</p>
+      </div>
+    </div>
+    <div class="add-contact">
+      {% render 'contact-icon' %}
+      <div class="add-contact-info">
+        <p class="option-text">add contact</p>
+        <p class="option">{{ section.settings.add_contact }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Popup Contact",
+  "class" : "custom-popup-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_popup",
+      "label": "Show Contact Popup",
+      "default": true
+    },
+    {
+      "type" : "text",
+      "id" : "phone_contact",
+      "label" : "Phone Contact"
+    },
+    {
+      "type" : "text",
+      "id" : "whatsapp_contact",
+      "label" : "What's App Contact"
+    },
+    {
+      "type": "richtext",
+      "id" : "schedule_text",
+      "label" : "Schedule"
+    },
+    {
+      "type" : "text",
+      "id" : "email",
+      "label" : "Email"
+    },
+    {
+      "type" : "text",
+      "id" : "add_contact",
+      "label" : "Add Contact"
+    }
+  ],
+  "presets":[
+  {
+    "name" : "Custom Popup Contact",
+    "settings" :{
+
+    }
+  }
+]
+}
+{% endschema %}

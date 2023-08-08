@@ -1,0 +1,137 @@
+{%- style -%}
+  .section{{ section.id }}.custom-banner {
+    padding-top: {{ section.settings.padding_top}}px;
+    padding-bottom: {{ section.settings.padding_bottom}}px;
+    padding-left: {{ section.settings.padding_left}}px;
+    padding-right: {{ section.settings.padding_right}}px;
+  }
+
+  @media screen and (max-width: 750px) {
+    .section-{{ section.id }}.custom-banner{
+      padding-top: {{ section.settings.mb_padding_top }}px;
+      padding-bottom: {{ section.settings.mb_padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="custom-banner section{{ section.id }} ">
+  {% if section.settings.image1 != blank %}
+    <div class="banner-image1">
+      <a href="{{ section.settings.image1_url }}">
+        <img src="{{ section.settings.image1 | img_url:'master' }}">
+      </a>
+    </div>
+  {% endif %}
+  {% if section.settings.image2 != blank %}
+    <div class="banner-image2">
+      <a href="{{ section.settings.image2_url }}">
+        <img src="{{ section.settings.image2 | img_url:'master' }}">
+      </a>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Custom Banner",
+  "class" : "custom-banner-section",
+  "settings": [
+
+    {
+      "type" : "image_picker",
+      "id" : "image1",
+      "label" : "Image"
+    },
+    {
+      "type" : "url",
+      "id" : "image1_url",
+      "label" : "Image 1 URL"
+    },
+    {
+      "type" : "image_picker",
+      "id" : "image2",
+      "label" : "Heading"
+    },
+    {
+      "type" : "url",
+      "id" : "image2_url",
+      "label" : "Image 2 URL"
+    },
+    {
+    "type": "header",
+    "content": "Desktop Padding "
+  },
+  {
+    "type": "range",
+    "id": "padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Bottom",
+    "default": 36
+  },
+    {
+    "type": "range",
+    "id": "padding_left",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Left",
+    "default": 36
+  },
+    {
+    "type": "range",
+    "id": "padding_right",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Right",
+    "default": 36
+  },
+  {
+    "type": "header",
+    "content": "Mobile Padding"
+  },
+  {
+    "type": "range",
+    "id": "mb_padding_top",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Top",
+    "default": 36
+  },
+  {
+    "type": "range",
+    "id": "mb_padding_bottom",
+    "min": 0,
+    "max": 100,
+    "step": 4,
+    "unit": "px",
+    "label": "Padding Bottom",
+    "default": 36
+  }
+  ],
+  "presets":[
+    {
+      "name" : "Custom Banner",
+      "settings" :{
+
+      }
+    }
+  ]
+}
+{% endschema %}

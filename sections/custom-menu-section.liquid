@@ -1,0 +1,54 @@
+{% assign menu = linklists[section.settings.menu] %}
+
+<div class="custom-menu-section page-width">
+  <h2>Custom Menu</h2>
+  <nav class="custom-nav">
+    <ul class="menu-links">
+      {% for item in menu.links %}
+        <li class="menu-item">
+          <a href="{{ item.url }}">{{ item.title }}</a>
+          {% if item.links.size > 0 %}
+            <ul class="submenu">
+              {% for child_item in item.links %}
+                <li class="submenu-item">
+                  <a href="{{ child_item.url }}">{{ child_item.title }}</a>
+                  {% if child_item.links.size > 0 %}
+                    <ul class="subsubmenu">
+                      {% for grandchild_item in child_item.links %}
+                        <li>
+                          <a href="{{ grandchild_item.url }}">{{ grandchild_item.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Custom Menu Section",
+  "class" : "custom-menu-section",
+  "settings": [
+    {
+      "type" : "link_list",
+      "id"  : "menu",
+      "label" : "Menu"
+    }
+  ],
+  "presets" :[
+    {
+      "name" : "Custom Menu Section",
+      "settings" : {
+
+      }
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+{% assign handle_products = section.settings.custom_handle | split: ',' %}
+
+<div class="custom-producthandle page-width">
+  {%- for handles in handle_products -%}
+    {% assign product = all_products[handles] %}
+    <div class="product-data">
+      <div class="product-image">
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url:'master' }}" alt="{{ product.title }}">
+        </a>
+      </div>
+      <div class="peoduct-content">
+        <h3>
+          <a href="{{ product.url }}">{{ product.title }}</a>
+        </h3>
+        <P>{{ product.price | money }}</P>
+        <p>{{ product.compare_at_price | money }}</p>
+      </div>
+    </div>
+  {%- endfor -%}
+</div>
+
+{% schema %}
+{
+  "name": "Custom ProductHandle",
+  "class" : "custom-producthandle-section",
+  "settings": [
+    {
+      "type" : "text",
+      "id" : "custom_handle",
+      "label" : "Handle"
+    }
+  ],
+ "presets":[
+    {
+      "name" : "Custom ProductHandle",
+      "settings" :{
+
+      }
+    }
+  ]
+}
+{% endschema %}

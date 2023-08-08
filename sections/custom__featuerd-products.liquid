@@ -1,0 +1,22 @@
+{% assign product = all_products[product.metafields.custom.related_product] %}
+
+<h2>Related Products</h2>
+
+<div class="products-img">
+  <img src="{{ product.featured_image | img_url:'master' }}">
+</div>
+<h2>{{ product.title }}</h2>
+{% schema %}
+{
+  "name": "Custom Featuerd Products",
+  "name" : "custom-featuerd-product",
+  "settings": [
+
+  ],
+  "presets" : [
+    {
+      "name": "Custom Featuerd Products"
+    }
+  ]
+}
+{% endschema %}
