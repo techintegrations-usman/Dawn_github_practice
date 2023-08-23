@@ -29,22 +29,27 @@
       </select>
       {% if product.variants.size > 1 %}
         <div class="product-option">
-          <fieldset>
-            <legend>{{ product.options.first.name }}</legend>
-            {% for value in product.options.first.values %}
-              <div>
-                <input
-                  type="radio"
-                  name="option-{{ product.options.first.name | handle }}"
-                  value="{{ value }}"
-                  id="option-{{ product.options.first.name | handle }}-{{ value | handle }}"
-                >
-                <label for="option-{{ product.options.first.name | handle }}-{{ value | handle }}">
-                  {{ value }}
-                </label>
-              </div>
-            {% endfor %}
-          </fieldset>
+          {% for option in product.options_with_values %}
+            <fiedlset>
+              <legend>{{ option.name }}</legend>
+              {% for value in option.values %}
+                <div>
+                  <input
+                    {% if option.selected_value == value %}
+                      checked
+                    {% endif %}
+                    type="radio"
+                    name="{{  option.name}}"
+                    value="{{ value }}"
+                    id="{{ option.name | handlize }}-{{ value | handlize }}"
+                  >
+                  <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                    {{ value }}
+                  </label>
+                </div>
+              {% endfor %}
+            </fiedlset>
+          {% endfor %}
         </div>
       {% endif %}
 
@@ -58,29 +63,3 @@
     {% endform %}
   </div>
 </div>
-
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('.first-select').change(function() {
-      var selectedValue = $(this).val();
-      $('input[type="radio"]').each(function() {
-        if ($(this).val() === selectedValue) {
-          $(this).attr('data-selected-variant', selectedValue);
-        } else {
-          $(this).removeAttr('data-selected-variant');
-        }
-      });
-    });
-
-    $('#add-to-cart-button').click(function() {
-      var selectedVariant = $('input[type="radio"][data-selected-variant]').val();
-      if (selectedVariant) {
-        // Use selectedVariant value to add to cart
-        console.log('Selected Variant ID:', selectedVariant);
-        // Add your code to add selected variant to cart here
-      }
-    });
-  });
-</script>
