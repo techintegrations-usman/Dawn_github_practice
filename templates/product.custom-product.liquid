@@ -41,9 +41,9 @@
                     type="radio"
                     name="{{  option.name}}"
                     value="{{ value }}"
-                    id="{{ variant.id }}"
+                    id="{{ option.name | handlize }}-{{ value | handlize }}"
                   >
-                  <label for="{{ value.id }}">
+                  <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
                     {{ value }}
                   </label>
                 </div>
