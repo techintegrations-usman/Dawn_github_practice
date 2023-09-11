@@ -66,7 +66,7 @@
     {% endform %}
   </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/url-parse@1.5.10/dist/url-parse.min.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% comment %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -94,7 +94,11 @@
     });
   </script>
 {% endcomment %}
-
+<script
+  src="https://cdn.jsdelivr.net/npm/url-parse@1.5.10/dist/url-parse.min.js"
+  integrity="sha256-0CWWBJrf1D+RzXxYmL4gqZdeZUw76w7jB/j7JygXddY="
+  crossorigin="anonymous"
+></script>
 <script>
   var product = {{product | json}}
   document.querySelectorAll('.product-option input[type="radio"]').forEach(radio =>{
