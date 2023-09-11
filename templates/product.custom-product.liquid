@@ -13,7 +13,12 @@
 
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
     <div class="product-prices">
-      <p>{{ product.price | money }}</p>
+      <p class="campaer-price">
+        {{ product.compare_at_price }}
+      </p>
+      <p class="orignal-price">
+        {{ product.price | money }}
+      </p>
     </div>
 
     {% form 'product', product %}
