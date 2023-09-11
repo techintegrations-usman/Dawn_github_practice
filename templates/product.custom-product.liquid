@@ -124,7 +124,8 @@
       //Change url
       var url = new URLParse(window.location.href,true)
       url.query.variant = matchedVariant.id
-      console.log(url.toString())
+      window.history.replaceState(null, null,url.toString())
+      console.log()
 
 
 
