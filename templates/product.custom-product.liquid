@@ -12,7 +12,9 @@
     <h3>{{ product.title }}</h3>
 
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
-    <p>{{ product.price | money }}</p>
+    <div class="product-prices">
+      <p>{{ product.price | money }}</p>
+    </div>
 
     {% form 'product', product %}
       <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
