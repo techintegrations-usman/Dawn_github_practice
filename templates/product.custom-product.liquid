@@ -15,7 +15,7 @@
     <p>{{ product.price | money }}</p>
 
     {% form 'product', product %}
-      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% comment %}
         <select name="id">
           {% for variant in product.variants %}
@@ -97,13 +97,13 @@
   var product = {{product | json}}
   document.querySelectorAll('.product-option input[type="radio"]').forEach(radio =>{
     radio.addEventListener('change' , () =>{
-
+      // Find Selected Options
       var selectedOptions = []
       document.querySelectorAll('.product-option input[type="radio"]:checked ').forEach(radio => {
        selectedOptions.push(radio.value)
       })
 
-
+      // Finding Matched Variants
       var matchedVariant = product.variants.find(variants => {
         var pass =true
 
@@ -115,7 +115,10 @@
         }
         return pass
       })
-        console.log(matchedVariant)
+
+      // Change product Form Varients
+      document.querySelctor('#product-id').value = matchedVariant
+
 
 
 
