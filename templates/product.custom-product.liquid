@@ -122,7 +122,7 @@
       document.querySelector('#product-id').value = matchedVariant.id
 
       //Change url
-      var url = new URLParse(window.locations.href,true)
+      var url = new URLParse(window.location.href,true)
       url.query.variant = matchedVariant.id
       console.log(url.toString())
 
