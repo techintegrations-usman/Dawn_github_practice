@@ -15,7 +15,7 @@
     <p>{{ product.price | money }}</p>
 
     {% form 'product', product %}
-      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant }}">
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% comment %}
         <select name="id">
           {% for variant in product.variants %}
