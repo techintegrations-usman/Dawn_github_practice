@@ -95,5 +95,8 @@
 
 <script>
   var product = {{product | json}}
-  console.log(product)
+  document.querySelectorAll('.product-option input[type="radio"]').forEach(radio)
+  radio.addEventListener('chnange', () => {
+    console.log('hey')
+  })
 </script>
