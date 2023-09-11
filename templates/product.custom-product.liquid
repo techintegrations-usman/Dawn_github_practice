@@ -102,7 +102,20 @@
       document.querySelectorAll('.product-option input[type="radio"]:checked ').forEach(radio => {
        selectedOptions.push(radio.value)
       })
-        console.log(selectedOptions)
+
+
+      var matchedVariant = product.variants.find(variants => {
+        var pass =true
+
+        for (var i = 0; i <selectedOptions.lenght; i++) {
+          if (selectedOptions.indexof(variant.options[i]) ===-1){
+            pass = false
+            break
+          }
+        }
+        return pass
+      })
+        console.log(matchedVariant)
 
 
 
