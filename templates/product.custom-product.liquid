@@ -118,8 +118,12 @@
         return pass
       })
 
-      // Change product Form Varients
+      // Change product Form Varients Id
       document.querySelector('#product-id').value = matchedVariant.id
+
+      //Change url
+      var url = new URLParse(window.locations.href,true)
+      console.log(url)
 
 
 
