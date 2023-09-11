@@ -96,41 +96,42 @@
 {% endcomment %}
 
 <script>
-  var product = {{product | json}}
-  document.querySelectorAll('.product-option input[type="radio"]').forEach(radio =>{
-    radio.addEventListener('change' , () =>{
-      // Find Selected Options
-      var selectedOptions = []
-      document.querySelectorAll('.product-option input[type="radio"]:checked ').forEach(radio => {
-       selectedOptions.push(radio.value)
+    var product = {{product | json}}
+    document.querySelectorAll('.product-option input[type="radio"]').forEach(radio =>{
+      radio.addEventListener('change' , () =>{
+        // Find Selected Options
+        var selectedOptions = []
+        document.querySelectorAll('.product-option input[type="radio"]:checked ').forEach(radio => {
+         selectedOptions.push(radio.value)
+        })
+
+        // Finding Matched Variants
+        var matchedVariant = product.variants.find(variants => {
+          var pass =true
+
+          for (var i = 0; i < selectedOptions.length; i++) {
+    if (selectedOptions.indexOf(variant.options[i]) === -1) {
+      pass = false;
+      break;
+    }
+  }
+
+          return pass
+        })
+
+        // Change product Form Varients Id
+        document.querySelector('#product-id').value = matchedVariant.id
+
+        //Change url
+        var url = new URLParse(window.location.href,true)
+        url.query.variant = matchedVariant.id
+        window.history.replaceState(null, null,url.toString())
+        console.log()
+
+
+
+
       })
-
-      // Finding Matched Variants
-      var matchedVariant = product.variants.find(variants => {
-        var pass =true
-
-        for (var i = 0; i < selectedOptions.length; i++) {
-          if (selectedOptions.indexOf(variant.options[i]) ===-1){
-            pass = false
-            break
-          }
-        }
-        return pass
-      })
-
-      // Change product Form Varients Id
-      document.querySelector('#product-id').value = matchedVariant.id
-
-      //Change url
-      var url = new URLParse(window.location.href,true)
-      url.query.variant = matchedVariant.id
-      window.history.replaceState(null, null,url.toString())
-      console.log()
-
-
-
 
     })
-
-  })
 </script>
