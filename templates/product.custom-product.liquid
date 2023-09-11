@@ -14,7 +14,7 @@
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
     <div class="product-prices">
       <p class="campaer-price">
-        {{ product.compare_at_price }}
+        {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </p>
       <p class="orignal-price">
         {{ product.price | money }}
