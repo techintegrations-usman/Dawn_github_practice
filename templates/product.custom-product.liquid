@@ -123,7 +123,8 @@
 
       //Change url
       var url = new URLParse(window.locations.href,true)
-      console.log(url)
+      url.query.variant = matchedVariant.id
+      console.log(url.to)
 
 
 
