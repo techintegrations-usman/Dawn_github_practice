@@ -75,7 +75,10 @@
 </div>
 
 <div class="supplier-section">
-  {{ product.metafields.custom.supplier }}
+  {% for supplier in shop.metafields.supplier.value %}
+    <img src="{{ supplier.photo | img_url:'200x' }}">
+    <h3>{{ supplier.title }}</h3>
+  {% endfor %}
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 {% comment %}
