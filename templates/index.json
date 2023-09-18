@@ -1,1 +1,169 @@
-{"sections":{"bc6dd337-01ac-4ed1-bb69-4d1755ea38c7":{"type":"custom-messaeg-banner","settings":{"banner":"shopify:\/\/shop_images\/pexels-pavel-danilyuk-6461199_2.jpg","padding_top":36,"padding_bottom":36,"mb_padding_top":36,"mb_padding_bottom":36}},"image_banner":{"type":"image-banner","blocks":{"heading":{"type":"heading","settings":{"heading":"Browse our latest products","heading_size":"h0"}},"button":{"type":"buttons","settings":{"button_label_1":"Shop all","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["heading","button"],"settings":{"image":"shopify:\/\/shop_images\/pexels-mart-production-7679438.jpg","image_overlay_opacity":40,"image_height":"medium","desktop_content_position":"middle-center","show_text_box":false,"desktop_content_alignment":"center","color_scheme":"inverse","image_behavior":"none","mobile_content_alignment":"center","stack_images_on_mobile":false,"show_text_below":false}},"featured_collection":{"type":"featured-collection","settings":{"title":"Featured products","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"shirts","products_to_show":8,"columns_desktop":4,"full_width":false,"show_view_all":true,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"background-1","image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"enable_quick_add":false,"columns_mobile":"2","swipe_on_mobile":false,"padding_top":76,"padding_bottom":76}},"a7d2b0a2-8711-4b55-869e-be316582788b":{"type":"custom-banner","settings":{"image1":"shopify:\/\/shop_images\/pexels-andrea-piacquadio-3755706.jpg","image1_url":"shopify:\/\/products\/casual-shirt","image2":"shopify:\/\/shop_images\/pexels-rachel-claire-5490970.jpg","image2_url":"shopify:\/\/products\/red-shirts","padding_top":36,"padding_bottom":36,"padding_left":8,"padding_right":8,"mb_padding_top":36,"mb_padding_bottom":36}},"6319257c-5a47-48ef-924b-36654599fc61":{"type":"custom-menu-section","settings":{"menu":"custom-menu"}},"4ed69f83-6533-42f8-bed1-b9c76901499c":{"type":"custom-producthandle-section","settings":{"custom_handle":"black-shirt,red-shirts,casual-shirt,white-shirt,guardian-angel-earrings"}},"287ef773-286a-40d2-b9dd-3b67e64d041b":{"type":"custom__featuerd-products","disabled":true,"settings":{}}},"order":["bc6dd337-01ac-4ed1-bb69-4d1755ea38c7","image_banner","featured_collection","a7d2b0a2-8711-4b55-869e-be316582788b","6319257c-5a47-48ef-924b-36654599fc61","4ed69f83-6533-42f8-bed1-b9c76901499c","287ef773-286a-40d2-b9dd-3b67e64d041b"]}
+{
+  "sections": {
+    "bc6dd337-01ac-4ed1-bb69-4d1755ea38c7": {
+      "type": "custom-messaeg-banner",
+      "settings": {
+        "banner": "shopify:\/\/shop_images\/pexels-pavel-danilyuk-6461199_2.jpg",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "mb_padding_top": 36,
+        "mb_padding_bottom": 36
+      }
+    },
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "Browse our latest products",
+            "heading_size": "h0"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop all",
+            "button_link_1": "shopify:\/\/collections\/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/pexels-mart-production-7679438.jpg",
+        "image_overlay_opacity": 40,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "inverse",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured products",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "shirts",
+        "products_to_show": 8,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 76,
+        "padding_bottom": 76
+      }
+    },
+    "a7d2b0a2-8711-4b55-869e-be316582788b": {
+      "type": "custom-banner",
+      "settings": {
+        "image1": "shopify:\/\/shop_images\/pexels-andrea-piacquadio-3755706.jpg",
+        "image1_url": "shopify:\/\/products\/casual-shirt",
+        "image2": "shopify:\/\/shop_images\/pexels-rachel-claire-5490970.jpg",
+        "image2_url": "shopify:\/\/products\/red-shirts",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_left": 8,
+        "padding_right": 8,
+        "mb_padding_top": 36,
+        "mb_padding_bottom": 36
+      }
+    },
+    "6319257c-5a47-48ef-924b-36654599fc61": {
+      "type": "custom-menu-section",
+      "settings": {
+        "menu": "custom-menu"
+      }
+    },
+    "4ed69f83-6533-42f8-bed1-b9c76901499c": {
+      "type": "custom-producthandle-section",
+      "settings": {
+        "custom_handle": "black-shirt,red-shirts,casual-shirt,white-shirt,guardian-angel-earrings"
+      }
+    },
+    "287ef773-286a-40d2-b9dd-3b67e64d041b": {
+      "type": "custom__featuerd-products",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "6b65ec6e-d85c-4b01-a6a5-51280f78361b": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-heading-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-text-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text_style": "body"
+          }
+        },
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-button-1": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-heading-1",
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-text-1",
+        "template--20500029309241__6b65ec6e-d85c-4b01-a6a5-51280f78361b-button-1"
+      ],
+      "settings": {
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "bc6dd337-01ac-4ed1-bb69-4d1755ea38c7",
+    "image_banner",
+    "featured_collection",
+    "a7d2b0a2-8711-4b55-869e-be316582788b",
+    "6319257c-5a47-48ef-924b-36654599fc61",
+    "4ed69f83-6533-42f8-bed1-b9c76901499c",
+    "287ef773-286a-40d2-b9dd-3b67e64d041b",
+    "6b65ec6e-d85c-4b01-a6a5-51280f78361b"
+  ]
+}
