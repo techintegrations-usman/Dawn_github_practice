@@ -28,7 +28,9 @@
 <div class="page-width creators">
   {% for creator in shop.metaobjects.creators.values %}
     <div class="creator">
-      <div class="creator-image"></div>
+      <div class="creator-image">
+        {{ creator.photo | img_url }}
+      </div>
       <h2 class="creator-title">{{ creator.name }}</h2>
       <p class="creator-paragraph"></p>
       <h3>Creator of...</h3>
