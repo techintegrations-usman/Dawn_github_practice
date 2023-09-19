@@ -35,7 +35,7 @@
       <p class="creator-paragraph"></p>
       <h3>Creator of...</h3>
       <div class="creator-products">
-        {% for product in products %}
+        {% for product in creator.creator_of.value %}
           <a href="" class="creator-product"></a>
         {% endfor %}
       </div>
