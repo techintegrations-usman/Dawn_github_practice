@@ -79,10 +79,31 @@
       "type": "creators",
       "settings": {
       }
+    },
+    "be9cb7af-b88d-4e0c-b89b-b9bf2acf0018": {
+      "type": "creators-with-blocks",
+      "blocks": {
+        "d46f8df4-a008-4be7-80be-00423b6c3fa9": {
+          "type": "creators",
+          "repeater": "{{ product.metafields.custom.creators.value }}",
+          "settings": {
+            "photo": "{{ block.repeater.photo.value }}",
+            "name": "{{ block.repeater.name.value }}",
+            "bio": "",
+            "creators_of": "{{ block.repeater.creator_of.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "d46f8df4-a008-4be7-80be-00423b6c3fa9"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "main",
-    "creators"
+    "creators",
+    "be9cb7af-b88d-4e0c-b89b-b9bf2acf0018"
   ]
 }
