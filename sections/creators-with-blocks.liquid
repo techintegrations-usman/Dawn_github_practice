@@ -29,13 +29,13 @@
   {% for block in section.blocks %}
     <div class="creator">
       <div class="creator-image">
-        {{ creator.photo | img_tag }}
+        {{ block.settings.photo | img_tag }}
       </div>
-      <h2 class="creator-title">{{ creator.name }}</h2>
-      <p class="creator-paragraph">{{ creator.bio }}</p>
+      <h2 class="creator-title">{{ block.settings.name }}</h2>
+      <p class="creator-paragraph">{{ block.settings.bio }}</p>
       <h3>Creator of...</h3>
       <div class="creator-products">
-        {% for product in creator.creator_of.value %}
+        {% for product in block.settings.creator_of.value %}
           <a href="{{ product.url }}" class="creator-product">
             {{ product.featured_image | image_url: '100x' }}
             {{ product.title }}
