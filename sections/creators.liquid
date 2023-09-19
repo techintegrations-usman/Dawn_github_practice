@@ -54,6 +54,34 @@
 {% schema %}
 {
   "name": "Creators",
-  "settings": []
+  "settings": [],
+  "blocks" :[
+    {
+      "type" : "creators",
+      "name" : "Creators",
+      "settings": [
+        {
+          "type" : "image_picker",
+          "id" : "photo",
+          "label" : "Photo"
+        },
+        {
+          "type" : "text",
+          "id" : "name",
+          "label" : "Name"
+        },
+        {
+          "type" : "textarea",
+          "id" : "bio",
+          "label" : "Bio"
+        },
+        {
+          "type" : "product_list",
+          "id" : "creators_of",
+          "label" : "List of Products created"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}
