@@ -36,7 +36,10 @@
       <h3>Creator of...</h3>
       <div class="creator-products">
         {% for product in creator.creator_of.value %}
-          <a href="" class="creator-product"></a>
+          <a href="{{ product.url }}" class="creator-product">
+            {{ product.featured_image | image_tag }}
+            {{ product.title }}
+          </a>
         {% endfor %}
       </div>
     </div>
