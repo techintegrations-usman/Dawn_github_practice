@@ -29,7 +29,7 @@
   {% for creator in shop.metaobjects.creators.values %}
     <div class="creator">
       <div class="creator-image">
-        {{ creator.photo | img_url }}
+        {{ creator.photo | img_tag }}
       </div>
       <h2 class="creator-title">{{ creator.name }}</h2>
       <p class="creator-paragraph"></p>
