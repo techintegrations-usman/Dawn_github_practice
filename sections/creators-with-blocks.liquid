@@ -35,7 +35,7 @@
       <p class="creator-paragraph">{{ block.settings.bio }}</p>
       <h3>Creator of...</h3>
       <div class="creator-products">
-        {% for product in block.settings.creator_of.values %}
+        {% for product in block.settings.creator_of %}
           <a href="{{ product.url }}" class="creator-product">
             {{ product.featured_image | image_url: '100x' }}
             {{ product.title }}
