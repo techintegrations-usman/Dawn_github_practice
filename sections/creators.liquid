@@ -24,9 +24,9 @@
     color: rgb(var(--color-foreground));
   }
 </style>
-
+{% assign creators = shop.metaobjects.creators.values %}
 <div class="page-width creators">
-  {% for creator in shop.metaobjects.creators.values %}
+  {% for creator in creators %}
     <div class="creator">
       <div class="creator-image">
         {{ creator.photo | img_tag }}
