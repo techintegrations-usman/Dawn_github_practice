@@ -25,6 +25,11 @@
   }
 </style>
 {% assign creators = shop.metaobjects.creators.values %}
+
+{% if template contains 'product' %}
+  {% assign creators = product.metafields.custom.creators.value %}
+{% endif %}
+
 <div class="page-width creators">
   {% for creator in creators %}
     <div class="creator">
