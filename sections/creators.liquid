@@ -32,7 +32,7 @@
         {{ creator.photo | img_tag }}
       </div>
       <h2 class="creator-title">{{ creator.name }}</h2>
-      <p class="creator-paragraph"></p>
+      <p class="creator-paragraph">{{ creator.bio }}</p>
       <h3>Creator of...</h3>
       <div class="creator-products">
         {% for product in creator.creator_of.value %}
