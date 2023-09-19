@@ -37,7 +37,7 @@
       <div class="creator-products">
         {% for product in block.settings.creator_of %}
           <a href="{{ product.url }}" class="creator-product">
-            {{ product.featured_image | image_url: '100x' }}
+            {{ product.featured_image | image_url: '500x' }}
             {{ product.title }}
           </a>
         {% endfor %}
