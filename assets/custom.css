@@ -1,3 +1,8 @@
+.product-prices {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
 .custom-banner {
   display: flex;
   flex-wrap: wrap;
