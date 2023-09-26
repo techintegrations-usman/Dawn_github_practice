@@ -17,7 +17,7 @@
         {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </p>
       <p class="product-price">
-        {{ product.price | money }}
+        {{ product.selected_or_first_available_variant.price | money }}
       </p>
     </div>
 
@@ -140,7 +140,8 @@
       window.history.replaceState(null, null,url.toString())
       console.log()
 
-
+    //change prices
+      document.querySelector('product-prices').textcontent = matchedVariant.price
 
 
     })
