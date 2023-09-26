@@ -13,7 +13,7 @@
 
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
     <div class="product-prices">
-      <p class="product-campare">
+      <p class="product-compare">
         {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </p>
       <p class="product-price">
@@ -142,7 +142,7 @@
 
     //change prices
       document.querySelector('.product-prices').textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}")
-      document.querySelector('.product-campare').textContent = formatMoney(matchedVariant.compare_at_price, "{{ shop.money_format }}")
+      document.querySelector('.product-compare').textContent = formatMoney(matchedVariant.compare_at_price, "{{ shop.money_format }}")
 
 
     })
