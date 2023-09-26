@@ -20,7 +20,6 @@
         {{ product.selected_or_first_available_variant.price | money }}
       </p>
     </div>
-    <p>{{ variant.compare_at_price }}</p>
 
     {% form 'product', product %}
       <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
