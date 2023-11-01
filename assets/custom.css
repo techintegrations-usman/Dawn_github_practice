@@ -2,6 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     column-gap: 10px;
+  flex-direction: row-reverse;
+    justify-content: left;
 }
 .product-prices p.product-compare {
     text-decoration: line-through;
