@@ -13,11 +13,9 @@
 
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
     <div class="product-prices">
-    {% if product.selected_or_first_available_variant.compare_at_price !=blank %}
       <p class="product-compare">
         {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </p>
-      {% endif %}
       <p class="product-price">
         {{ product.selected_or_first_available_variant.price | money }}
       </p>
