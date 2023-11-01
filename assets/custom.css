@@ -3,6 +3,9 @@
     flex-wrap: wrap;
     column-gap: 10px;
 }
+.product-prices p.product-compare {
+    text-decoration: line-through;
+}
 .custom-banner {
   display: flex;
   flex-wrap: wrap;
