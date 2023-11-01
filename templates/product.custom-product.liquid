@@ -81,32 +81,6 @@
   {% endfor %}
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-{% comment %}
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-      $('.product-option input[type="radio"]').change(function() {
-        var selectedValue = $(this).val();
-        $('select[name="id"] option').each(function() {
-          if ($(this).val() === selectedValue) {
-            $('select[name="id"]').val(selectedValue);
-            $(this).attr('selected', 'selected');
-          }
-        });
-      });
-
-      $('#add-to-cart-button').click(function() {
-        var selectedVariant = $('select[name="id"]').val();
-        if (selectedVariant) {
-          // Use selectedVariant value to add to cart
-          console.log('Selected Variant ID:', selectedVariant);
-          // Add your code to add selected variant to cart here
-        }
-      });
-    });
-  </script>
-{% endcomment %}
 
 <script>
   var product = {{product | json}}
