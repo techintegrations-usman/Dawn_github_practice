@@ -142,7 +142,7 @@
 
     //change prices
       var productPrices = document.querySelector('.product-prices');
-      var productCompare = document.querySelector('.product-compare');
+      var productCompare = document.getElementByClass('.product-compare');
       
       if (productPrices && productCompare) {
         productPrices.textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}");
