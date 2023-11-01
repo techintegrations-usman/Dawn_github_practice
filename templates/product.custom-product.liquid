@@ -13,7 +13,7 @@
 
     <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
     <div class="product-prices">
-      <p class="product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}  hide {% endunless %}">
+      <p class="product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}hide {% endunless %}">
         {{ product.selected_or_first_available_variant.compare_at_price | money }}
       </p>
       <p class="product-price">
