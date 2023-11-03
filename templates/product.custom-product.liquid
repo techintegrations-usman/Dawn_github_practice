@@ -10,7 +10,7 @@
 
     <ul class="thumbs-image">
       {% for image in product.images %}
-        <li> class="{% if image == featured %} selected {% endif %}" <img src="{{ image | img_url:'300x' }}"></li>
+        <li class="{% if image == featured %} selected {% endif %}"><img src="{{ image | img_url:'300x' }}"></li>
         {% endfor %}
     </ul>
       {% comment %}
