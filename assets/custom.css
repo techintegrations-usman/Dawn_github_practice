@@ -24,6 +24,9 @@
 .product-images ul.thumbs-image li.selected {
     border: 1px solid red;
 }
+ul.thumbs-image li {
+    cursor: pointer;
+}
 .product-prices p.product-compare {
     text-decoration: line-through;
 }
