@@ -1,14 +1,16 @@
 <div class="custom-product-template page-width">
   <div class="product-images">
     {% if product.selected_or_first_available_variant.featured_image %}
-    <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: 'master' }}">
+      {% assign featured = product.selected_or_first_available_variant.featured_image %}
+    <img id="product-image" src="{{ featured | img_url: 'master' }}">
       {% else %}
-      <img src="{{ product.featured_image | img_url: 'master' }}">
+      {% assign featured = product.featured_image %}
+      <img id="product-image" src="{{ featured | img_url: 'master' }}">
        {% endif %}
 
     <ul class="thumbs-image">
       {% for image in product.images %}
-        <li> <img src="{{ image | img_url:'300x' }}"></li>
+        <li> class="{% if image == featured %} selected {% endif %}" <img src="{{ image | img_url:'300x' }}"></li>
         {% endfor %}
     </ul>
       {% comment %}
