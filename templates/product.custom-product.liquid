@@ -96,7 +96,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
   var product = {{product | json}}
   document.querySelectorAll('.product-option input[type="radio"]').forEach(radio =>{
     radio.addEventListener('change' , () =>{
@@ -134,12 +133,9 @@
 
       matchedVariant.compare_at_price > matchedVariant.price  ? document.querySelector('.product-compare').classList.remove('hide') :
       document.querySelector('.product-compare').classList.add('hide')
-
-
-
     })
   })
-  });
+
 
  
   document.querySelctorAll('.thumbs-image li').forEach(li => {
