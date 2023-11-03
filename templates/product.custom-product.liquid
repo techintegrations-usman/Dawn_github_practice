@@ -1,6 +1,10 @@
 <div class="custom-product-template page-width">
   <div class="product-images">
-    <img src="{{ product.featured_image | img_url: 'master' }}">
+    {% if product.selected_or_first_available_variant.featured_image %}
+    <img src="{{ product.selected_or_first_available_variant.featured_image | img_url: 'master' }}">
+      {% else %}
+      <img src="{{ product.featured_image | img_url: 'master' }}">
+       {% endif %}
     {% comment %}
     {% for variant in product.variants %}
       {% for image in variant.images %}
