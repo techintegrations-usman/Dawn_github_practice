@@ -51,8 +51,8 @@
       {% if product.variants.size > 1 %}
         <div class="product-option">
           {% for option in product.options_with_values %}
-            <fiedlset>
-              <legend>{{ option.name }}</legend>
+            <select>
+              <option>{{ option.name }}</option>
               {% for value in option.values %}
                 <div>
                   <input
@@ -69,7 +69,7 @@
                   </label>
                 </div>
               {% endfor %}
-            </fiedlset>
+            </select>
           {% endfor %}
         </div>
       {% endif %}
