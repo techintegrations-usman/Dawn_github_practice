@@ -138,10 +138,11 @@
 
 
  
-  document.querySelctorAll('.thumbs-image li').forEach(li => {
-    li.addEventListener('click', =>() {
-      document.querySelctor('.thumbs-image li.selected').classList.remove('selected')
-      li.classList.add('selected')
-    })
-  })
+  document.querySelectorAll('.thumbs-image li').forEach(li => {
+  li.addEventListener('click', () => {
+    document.querySelector('.thumbs-image li.selected').classList.remove('selected');
+    li.classList.add('selected');
+  });
+});
+
 </script>
