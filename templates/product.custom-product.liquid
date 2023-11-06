@@ -98,15 +98,34 @@
           {% endfor %}
         </div>
       {% endif %}
-
-      <label for="quantity">Quantity </label>
-      <input type="number" id="quantity" name="quantity" value="1" min="1">
-
+      <div class="quantity-selctor">
+        <button type="button" class="qs-minus">
+          {% include 'icon-minus' %}
+        </button>
+        <label for="quantity">Quantity </label>
+        <input type="number" id="quantity" name="quantity" value="1" min="1" class="quantity-selctor-ins">
+        <button type="button" class="qs-plus">
+          {% include 'icon-plus' %}
+        </button>
+      </div>
       <button
         {% unless product.selected_or_first_available_variant.available %}
           disabled
         {% endunless %}
         id="add-to-cart-button"
+      >
+        {% if product.selected_or_first_available_variant.available %}
+          Add to Cart
+        {% else %}
+          Out Of Stock
+        {% endif %}
+      </button>
+
+      <button
+        {% unless product.selected_or_first_available_variant.available %}
+          disabled
+        {% endunless %}
+        id="buy-cart-button"
       >
         {% if product.selected_or_first_available_variant.available %}
           Add to Cart
@@ -181,12 +200,17 @@
 
         // Change Button
          var add = document.querySelector("#add-to-cart-button")
+         var buy = document.querySelector("#buy-cart-button")
         if (matchedVariant.available){
           add.textContent = "Add to Cart"
           add.disabled = false
+          buy.textContent = "But It Now"
+          buy.disabled = false
         }else{
           add.textContent = "Out Of Stock"
           add.disabled = true
+          buy.textContent = "Out Of Stock"
+          buy.disabled = true
         }
 
       })
