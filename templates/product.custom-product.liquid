@@ -227,4 +227,9 @@
       document.querySelector('#product-image').setAttribute('src', li.querySelector('img').getAttribute('src'));
     });
   });
+
+  document.querySelector('.qs-plus').addEventListener('click', ()=>{
+    var curentval = Number(document.querySelector('#quantity').value)
+    document.querySelector('#quantity').value = curentval + 1
+  })
 </script>
