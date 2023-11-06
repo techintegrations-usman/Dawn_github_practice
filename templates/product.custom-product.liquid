@@ -49,6 +49,32 @@
             </option>
           {% endfor %}
         </select>
+
+
+
+
+      {% if product.variants.size > 1 %}
+          <div class="product-option">
+            {% for option in product.options_with_values %}
+              <fieldset>
+                <legend>{{ option.name }}</legend>
+                <select name="{{ option.name | handleize }}" id="{{ option.name | handleize }}">
+                  {% for value in option.values %}
+                    <option
+                      {% if option.selected_value == value %}
+                        selected
+                      {% endif %}
+                      value="{{ value }}"
+                    >
+                      {{ value }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </fieldset>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endcomment %}
       
       {% if product.variants.size > 1 %}
         <div class="product-option">
@@ -75,28 +101,8 @@
           {% endfor %}
         </div>
       {% endif %}
-      {% endcomment %}
-      {% if product.variants.size > 1 %}
-  <div class="product-option">
-    {% for option in product.options_with_values %}
-      <fieldset>
-        <legend>{{ option.name }}</legend>
-        <select name="{{ option.name | handleize }}" id="{{ option.name | handleize }}">
-          {% for value in option.values %}
-            <option
-              {% if option.selected_value == value %}
-                selected
-              {% endif %}
-              value="{{ value }}"
-            >
-              {{ value }}
-            </option>
-          {% endfor %}
-        </select>
-      </fieldset>
-    {% endfor %}
-  </div>
-{% endif %}
+      
+              
 
       
 
