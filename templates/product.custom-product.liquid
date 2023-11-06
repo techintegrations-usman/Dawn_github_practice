@@ -171,7 +171,7 @@
         document.querySelector('#product-image').setAttribute('src', matchedVariant.featuerd_image.src);
         document.querySelector('.thumbs-image li.selected').classList.remove('selected')
 
-        document.querySelectorAll('.thumbs-image li ')[matchedVariant.featuerd_image.postion -1].classList.add('selected')
+        document.querySelectorAll('.thumbs-image li ')[matchedVariant.featuerd_image.postion].classList.add('selected')
       }
     })
   })
