@@ -49,7 +49,7 @@
             </option>
           {% endfor %}
         </select>
-      {% endcomment %}
+      
       {% if product.variants.size > 1 %}
         <div class="product-option">
           {% for option in product.options_with_values %}
@@ -75,6 +75,33 @@
           {% endfor %}
         </div>
       {% endif %}
+      {% endcomment %}
+      {% if product.variants.size > 1 %}
+        <div class="product-option">
+          {% for option in product.options_with_values %}
+            
+              <select>{{ option.name }}</select>
+              {% for value in option.values %}
+                <option>
+                  <input
+                    {% if option.selected_value == value %}
+                      checked
+                    {% endif %}
+                    type="radio"
+                    name="{{  option.name}}"
+                    value="{{ value }}"
+                    id="{{ option.name | handlize }}-{{ value | handlize }}"
+                  >
+                  <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                    {{ value }}
+                  </label>
+                </option>
+              {% endfor %}
+            
+          {% endfor %}
+        </div>
+      {% endif %}
+      
 
       <label for="quantity">Quantity </label>
       <input type="number" id="quantity" name="quantity" value="1" min="1">
