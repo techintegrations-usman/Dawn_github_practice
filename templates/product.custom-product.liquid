@@ -181,7 +181,7 @@
         var url = new URLParse(window.location.href,true)
         url.query.variant = matchedVariant.id
         window.history.replaceState(null, null,url.toString())
-        console.log()
+
 
       //change prices
         document.querySelector('.product-prices').textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}");
