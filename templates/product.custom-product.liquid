@@ -50,9 +50,6 @@
           {% endfor %}
         </select>
 
-
-
-
       {% if product.variants.size > 1 %}
           <div class="product-option">
             {% for option in product.options_with_values %}
@@ -108,8 +105,14 @@
 
       <label for="quantity">Quantity </label>
       <input type="number" id="quantity" name="quantity" value="1" min="1">
-
-      <button id="add-to-cart-button">Add to Cart</button>
+      
+      <button {% unless product.selected_or_first_available_variant.available %} disabled{% endunless %} id="add-to-cart-button">
+       {% if product.selected_or_first_available_variant.available %}
+        Add to Cart
+        {% else %}
+         Out Of Stock
+         {% endif %}
+      </button>
       {% for item in product.metafields.custom.weight.value -%}
         {{ item }}
       {%- endfor %}
