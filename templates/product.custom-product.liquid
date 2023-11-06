@@ -235,6 +235,8 @@
 
   document.querySelector('.qs-minus').addEventListener('click', ()=>{
     var curentval = Number(document.querySelector('#quantity').value)
+    if (curentval> 1){
     document.querySelector('#quantity').value = curentval - 1
+     }
   })
 </script>
