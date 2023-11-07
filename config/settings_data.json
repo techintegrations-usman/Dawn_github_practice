@@ -118,6 +118,8 @@
     "show_cart_note": true,
     "cart_drawer_collection": "shirts",
     "checkout_logo_image": "shopify:\/\/shop_images\/Screenshot_2023-07-06_192834-removebg-preview.png",
+    "checkout_logo_position": "center",
+    "checkout_logo_size": "medium",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
