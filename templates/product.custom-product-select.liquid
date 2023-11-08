@@ -1,0 +1,73 @@
+<div class="custom_product_template container">
+  <div class="product_img">
+    <img src="{{ product.featured_image | img_url: 'master' }}">
+  </div>
+  <form class="product_content" action="/cart/add" method="post" enctype="multipart/form-data">
+    <h1 class="product_title">{{ product.title }}</h1>
+    <p>SKU: {{ product.variants.first.sku }}</p>
+    <p>{{ product.price | money_with_currency }}</p>
+
+    <!-- Dynamic Option Dropdowns -->
+    {% for option in product.options %}
+      <label for="product-{{ option | handleize }}">Select {{ option }}:</label>
+      <select name="{{ option | handleize }}" id="product-{{ option | handleize }}">
+        {% for value in product.options_with_values[forloop.index0].values %}
+          <option value="{{ value | escape }}">{{ value }}</option>
+        {% endfor %}
+      </select>
+    {% endfor %}
+
+    <!-- Quantity Picker -->
+    <label for="product-quantity">Quantity:</label>
+    <input type="number" id="product-quantity" name="quantity" value="1" min="1">
+
+    <!-- Hidden input field with variant ID -->
+    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+    <!-- Add to cart button -->
+    <button type="submit" name="add">Add to cart</button>
+  </form>
+</div>
+<script>
+  // Get all the select elements for dynamic options
+  var selectElements = document.querySelectorAll("select");
+
+  // Get the hidden input field element
+  var hiddenInput = document.querySelector("input[name='id']");
+
+  // Get the product variants as a JSON object
+  var variants = {{ product.variants | json }};
+
+  // Define a function to get the selected option values as an array of strings
+  function getSelectedOptionValues() {
+    var selectedValues = [];
+
+    selectElements.forEach(function(selectElement) {
+      selectedValues.push(selectElement.value);
+    });
+
+    return selectedValues;
+  }
+
+  // Define a function to update the hidden input field value based on selected options
+  function updateHiddenInput() {
+    var selectedValues = getSelectedOptionValues();
+
+    var matchingVariant = variants.find(function(variant) {
+      return selectedValues.every(function(value, index) {
+        return value == variant["option" + (index + 1)];
+      });
+    });
+
+    if (matchingVariant) {
+      hiddenInput.value = matchingVariant.id;
+    } else {
+      hiddenInput.value = "";
+    }
+  }
+
+  // Add event listeners to all the select elements
+  selectElements.forEach(function(selectElement) {
+    selectElement.addEventListener("change", updateHiddenInput);
+  });
+</script>
