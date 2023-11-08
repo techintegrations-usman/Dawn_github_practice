@@ -99,6 +99,23 @@
         </div>
       {% endif %}
 
+      <div class="dropdown {{ downOption }}-select productOptionSelect">
+        <div class="product-loop-variants">
+          <select class="productOption dropdown-selected" name="option-{{ optionIndex }}">
+            {%- for value in option.values -%}
+              <option
+                value="{{ value | escape }}"
+                {% if option.selected_value == value %}
+                  selected
+                {% endif %}
+              >
+                {{ value }}
+              </option>
+            {%- endfor -%}
+          </select>
+        </div>
+      </div>
+
       <label for="quantity">Quantity </label>
       <div class="quantity-selctor">
         <button type="button" class="qs-minus">
