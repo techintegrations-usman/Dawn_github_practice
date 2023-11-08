@@ -1,3 +1,71 @@
+<style>
+    .container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .custom_product_template{
+    display:flex;
+    flex-wrap:wrap;
+    padding: 50px;
+  }
+
+  .custom_product_template .product_img{
+    flex: 0 0 calc(50% - 20px);
+    margin-right: 20px;
+  }
+
+  .custom_product_template .product_content{
+    flex: 0 0 50%;
+    padding:10px 50px;
+  }
+
+  .custom_product_template .product_img img{
+    width: 100%;
+  }
+
+  /* .product_title{
+    text-align: center;
+  } */
+
+  .product_title{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight:bold;
+    font-size: 40px;
+  }
+  select,input{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom:20px;
+  }
+
+
+
+  .title{
+   margin-bottom: 20px;
+
+  }
+
+  .custom_product_template .product_content .title p{
+    font-weight:bold;
+    font-size:25px;
+    margin:0;
+  }
+  .variant_content{
+    padding:25px;
+  }
+
+  button{
+     width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-top:15px;
+  }
+</style>
+
 <div class="custom_product_template container">
   <div class="product_img">
     <img src="{{ product.featured_image | img_url: 'master' }}">
