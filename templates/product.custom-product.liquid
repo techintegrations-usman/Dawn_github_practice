@@ -37,82 +37,90 @@
     {% form 'product', product %}
       <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% comment %}
-          <select name="id">
-            {% for variant in product.variants %}
-              <option
-                value="{{ variant.id }}"
-                {% if variant == product.selected_or_first_available_variant %}
-                  selected="selected"
-                {% endif %}
-              >
-                {{ variant.title }}
-              </option>
-            {% endfor %}
-          </select>
+            <select name="id">
+              {% for variant in product.variants %}
+                <option
+                  value="{{ variant.id }}"
+                  {% if variant == product.selected_or_first_available_variant %}
+                    selected="selected"
+                  {% endif %}
+                >
+                  {{ variant.title }}
+                </option>
+              {% endfor %}
+            </select>
+
+          {% if product.variants.size > 1 %}
+              <div class="product-option">
+                {% for option in product.options_with_values %}
+                  <fieldset>
+                    <legend>{{ option.name }}</legend>
+                    <select name="{{ option.name | handleize }}" id="{{ option.name | handleize }}">
+                      {% for value in option.values %}
+                        <option
+                          {% if option.selected_value == value %}
+                            selected
+                          {% endif %}
+                          value="{{ value }}"
+                        >
+                          {{ value }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  </fieldset>
+                {% endfor %}
+              </div>
+            {% endif %}
 
         {% if product.variants.size > 1 %}
-            <div class="product-option">
-              {% for option in product.options_with_values %}
-                <fieldset>
-                  <legend>{{ option.name }}</legend>
-                  <select name="{{ option.name | handleize }}" id="{{ option.name | handleize }}">
-                    {% for value in option.values %}
-                      <option
-                        {% if option.selected_value == value %}
-                          selected
-                        {% endif %}
-                        value="{{ value }}"
-                      >
-                        {{ value }}
-                      </option>
-                    {% endfor %}
-                  </select>
-                </fieldset>
-              {% endfor %}
-            </div>
-          {% endif %}
+          <div class="product-option">
+            {% for option in product.options_with_values %}
+              <fiedlset>
+                <legend>{{ option.name }}</legend>
+                {% for value in option.values %}
+                  <div>
+                    <input
+                      {% if option.selected_value == value %}
+                        checked
+                      {% endif %}
+                      type="radio"
+                      name="{{  option.name}}"
+                      value="{{ value }}"
+                      id="{{ option.name | handlize }}-{{ value | handlize }}"
+                    >
+                    <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                      {{ value }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </fiedlset>
+            {% endfor %}
+          </div>
+        {% endif %}
       {% endcomment %}
 
-      {% if product.variants.size > 1 %}
-        <div class="product-option">
-          {% for option in product.options_with_values %}
-            <fiedlset>
-              <legend>{{ option.name }}</legend>
-              {% for value in option.values %}
-                <div>
-                  <input
-                    {% if option.selected_value == value %}
-                      checked
-                    {% endif %}
-                    type="radio"
-                    name="{{  option.name}}"
-                    value="{{ value }}"
-                    id="{{ option.name | handlize }}-{{ value | handlize }}"
-                  >
-                  <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
-                    {{ value }}
-                  </label>
-                </div>
-              {% endfor %}
-            </fiedlset>
-          {% endfor %}
-        </div>
-      {% endif %}
-
-      <div class="dropdown {{ downOption }}-select productOptionSelect">
-        <div class="product-loop-variants">
-          <select class="productOption dropdown-selected" name="option-{{ optionIndex }}">
-            {%- for value in option.values -%}
-              <option
-                value="{{ value | escape }}"
-                {% if option.selected_value == value %}
-                  selected
-                {% endif %}
-              >
-                {{ value }}
-              </option>
-            {%- endfor -%}
-          </select>
+      <div class="product-option-selector" {{ block.shopify_attributes }}>
+        <label class="yv-variant-title">{{ 'products.product.product_variants' | t }}</label>
+        <div class="dropdown productOptionSelect">
+          <div class="product-loop-variants">
+            <select class="productOption dropdown-selected" name="id" form="{{ product_form_id }}">
+              {%- for variant in product.variants -%}
+                <option
+                  {% if variant == product.selected_or_first_available_variant %}
+                    selected="selected"
+                  {% endif %}
+                  {% if variant.available == false %}
+                    disabled
+                  {% endif %}
+                  value="{{ variant.id }}"
+                >
+                  {{ variant.title }}
+                  {%- if variant.available == false %} - {{ 'products.product.sold_out' | t }}{% endif %}
+                  - {{ variant.price | money | strip_html }}
+                </option>
+              {%- endfor -%}
+            </select>
+          </div>
         </div>
       </div>
 
