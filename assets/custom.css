@@ -262,11 +262,13 @@ ul.subsubmenu {
     cursor: pointer;
     text-transform: uppercase;
     transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    border: 0.5px solid black;
 }
 
 .custom-product-template .peoduct-atc button:hover {
     color: black;
     background: white;
+    border-color: black;
 }
 .product-prices p.product-compare {
     text-decoration: line-through;
