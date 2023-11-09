@@ -195,7 +195,7 @@ ul.subsubmenu {
     flex-wrap: wrap;
     align-items: center;
     column-gap: 20px;
-    margin: 20px 0;
+    margin: 10px 0;
 }
 .option-with-values input[type="radio"] {
     display: none;
