@@ -27,9 +27,7 @@
 ul.thumbs-image li {
     cursor: pointer;
 }
-.product-prices p.product-compare {
-    text-decoration: line-through;
-}
+
 .custom-banner {
   display: flex;
   flex-wrap: wrap;
@@ -270,7 +268,16 @@ ul.subsubmenu {
     color: black;
     background: white;
 }
-
+.product-prices p.product-compare {
+    text-decoration: line-through;
+  font-size: 14px;
+    line-height: 22px;
+}
+.product-info .product-prices p {
+    font-size: 25px;
+    color: black;
+    line-height: 35px;
+}
 
 
 
