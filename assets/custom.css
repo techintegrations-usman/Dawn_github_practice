@@ -182,7 +182,7 @@ ul.subsubmenu {
     line-height: 25px;
 }
 
-.product-options fiedlset legend, .product-options label.quantity  {
+.product-options fiedlset legend, .product-options label.custom-quantity  {
     color: black;
     font-size: 20px;
     line-height: 28px;
