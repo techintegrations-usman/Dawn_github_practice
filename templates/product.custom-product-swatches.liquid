@@ -163,18 +163,6 @@
         var selectedOptions = []
         document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
          selectedOptions.push(radio.value);
-
-                  selectedOptions.forEach(optionValue => {
-            // Find the corresponding option element by its value (you need to adjust this selector)
-            var option = document.querySelector(`[value="${optionValue}"]`);
-          
-            // Check if the option element exists and is valid
-            if (option && option.style) {
-              option.style.color = "white";
-              option.style.backgroundColor = "black";
-            }
-          });
-
         })
 
         // Finding Matched Variants
