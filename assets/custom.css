@@ -200,6 +200,9 @@ ul.subsubmenu {
 .option-with-values input[type="radio"] {
     display: none;
 }
+.custom-product-template .product-options {
+    margin: 18px 0;
+}
 .option-with-values label {
     color: #fff;
     font-size: 15px;
