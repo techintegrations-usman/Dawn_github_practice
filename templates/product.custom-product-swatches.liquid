@@ -78,22 +78,24 @@
           {% for option in product.options_with_values %}
             <fiedlset>
               <legend>{{ option.name }}</legend>
-              {% for value in option.values %}
-                <div>
-                  <input
-                    {% if option.selected_value == value %}
-                      checked
-                    {% endif %}
-                    type="radio"
-                    name="{{  option.name}}"
-                    value="{{ value }}"
-                    id="{{ option.name | handlize }}-{{ value | handlize }}"
-                  >
-                  <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
-                    {{ value }}
-                  </label>
-                </div>
-              {% endfor %}
+              <div class="option-with-values">
+                {% for value in option.values %}
+                  <div>
+                    <input
+                      {% if option.selected_value == value %}
+                        checked
+                      {% endif %}
+                      type="radio"
+                      name="{{  option.name}}"
+                      value="{{ value }}"
+                      id="{{ option.name | handlize }}-{{ value | handlize }}"
+                    >
+                    <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                      {{ value }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
             </fiedlset>
           {% endfor %}
         </div>
