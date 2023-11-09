@@ -210,13 +210,20 @@ ul.subsubmenu {
     display: none;
 }
 .option-with-values label {
-    color: white;
+    color: #fff;
     font-size: 16px;
     line-height: 25px;
     background: black;
     padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
+    transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+    border: 1px solid black;
+}
+.option-with-values label:hover {
+    color: black;
+    background: white;
+    border-color: black;
 }
 .custom-product-template .quantity-selctor input {
     max-width: 50px;
