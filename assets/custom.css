@@ -172,17 +172,18 @@ ul.subsubmenu {
   width: 100%;
   max-width: 100%;
 }
-.product-info h3 {
-  margin: 0;
-  font-size: 40px;
-  font-weight: 500;
+.custom-product-template .product-info h3 {
+    font-size: 40px;
+    line-height: 50px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.custom-product-template .product-info span.variant-sku {
+    color: black;
+    font-size: 16px;
+    line-height: 25px;
 }
 
-.product-info span.variant-sku {
-  font-size: 18px;
-  color: black;
-  padding: 25px 0;
-}
 
 .product-info p {
   margin: 0;
