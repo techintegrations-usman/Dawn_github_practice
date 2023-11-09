@@ -208,7 +208,15 @@ ul.subsubmenu {
 .option-with-values input[type="radio"] {
     display: none;
 }
-
+.option-with-values label {
+    color: white;
+    font-size: 16px;
+    line-height: 25px;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
 
 
 /*/ ////Custom Product Page  END////////*/
