@@ -244,7 +244,32 @@ ul.subsubmenu {
 .custom-product-template .quantity-selctor button svg {
     width: 1rem;
 }
+.custom-product-template .peoduct-atc {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 30px;
+    margin-top: 30px;
+    row-gap: 20px;
+}
 
+.custom-product-template .peoduct-atc button {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 500;
+    background: black;
+    color: white;
+    flex: 0 0 100%;
+    padding: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: border-color 0.15s ease-out, color 0.25s ease-out, background-color 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.custom-product-template .peoduct-atc button:hover {
+    color: black;
+    background: white;
+}
 
 
 
