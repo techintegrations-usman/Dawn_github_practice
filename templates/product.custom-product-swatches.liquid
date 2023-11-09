@@ -106,7 +106,7 @@
         <button type="button" class="qs-minus">
           {% include 'icon-minus' %}
         </button>
-        <input id="quantity" name="quantity" value="12" min="12" disabled class="quantity-selctor-ins">
+        <input id="quantity" name="quantity" value="1" min="1" disabled class="quantity-selctor-ins">
         <button type="button" class="qs-plus">
           {% include 'icon-plus' %}
         </button>
@@ -253,7 +253,7 @@
 
   document.querySelector('.qs-minus').addEventListener('click', ()=>{
     var curentval = Number(document.querySelector('#quantity').value)
-    if (curentval> 12){
+    if (curentval> 1){
     document.querySelector('#quantity').value = curentval - 1
      }
   })
