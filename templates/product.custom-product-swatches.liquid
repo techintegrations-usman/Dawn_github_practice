@@ -111,31 +111,33 @@
           {% include 'icon-plus' %}
         </button>
       </div>
-      <button
-        {% unless product.selected_or_first_available_variant.available %}
-          disabled
-        {% endunless %}
-        id="add-to-cart-button"
-      >
-        {% if product.selected_or_first_available_variant.available %}
-          Add to Cart
-        {% else %}
-          Out Of Stock
-        {% endif %}
-      </button>
+      <div class="peoduct-atc">
+        <button
+          {% unless product.selected_or_first_available_variant.available %}
+            disabled
+          {% endunless %}
+          id="add-to-cart-button"
+        >
+          {% if product.selected_or_first_available_variant.available %}
+            Add to Cart
+          {% else %}
+            Out Of Stock
+          {% endif %}
+        </button>
 
-      <button
-        {% unless product.selected_or_first_available_variant.available %}
-          disabled
-        {% endunless %}
-        id="buy-cart-button"
-      >
-        {% if product.selected_or_first_available_variant.available %}
-          Buy It Now
-        {% else %}
-          Out Of Stock
-        {% endif %}
-      </button>
+        <button
+          {% unless product.selected_or_first_available_variant.available %}
+            disabled
+          {% endunless %}
+          id="buy-cart-button"
+        >
+          {% if product.selected_or_first_available_variant.available %}
+            Buy It Now
+          {% else %}
+            Out Of Stock
+          {% endif %}
+        </button>
+      </div>
 
       {% for item in product.metafields.custom.weight.value -%}
         {{ item }}
