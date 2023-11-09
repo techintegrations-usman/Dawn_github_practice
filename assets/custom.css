@@ -205,6 +205,12 @@ ul.subsubmenu {
     align-items: center;
     column-gap: 20px;
 }
+.option-with-values input[type="radio"] {
+    display: none;
+}
+
+
+
 /*/ ////Custom Product Page  END////////*/
 
 /*/ ////Custom Login Page  START////////*/
