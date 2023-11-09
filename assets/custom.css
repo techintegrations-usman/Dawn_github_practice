@@ -240,13 +240,7 @@ ul.subsubmenu {
     padding: 10px 0;
     justify-content: space-evenly;
 }
-/* .custom-product-template .quantity-selctor button {
-    display: inline-block;
-    background: white;
-    padding: 3px 5px;
-    border: 0.5px solid #EFEFEF;
-    cursor: pointer;
-} */
+
 .custom-product-template .quantity-selctor button svg {
     width: 1rem;
 }
