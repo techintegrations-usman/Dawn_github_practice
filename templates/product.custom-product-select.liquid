@@ -73,7 +73,7 @@
   <form class="product_content" action="/cart/add" method="post" enctype="multipart/form-data">
     <h1 class="product_title">{{ product.title }}</h1>
     <p>SKU: {{ product.variants.first.sku }}</p>
-    <p>{{ product.price | money_with_currency }}</p>
+    <p>{{ product.price | money }}</p>
 
     <!-- Dynamic Option Dropdowns -->
     {% for option in product.options %}
