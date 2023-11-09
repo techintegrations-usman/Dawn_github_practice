@@ -226,6 +226,7 @@ ul.subsubmenu {
     padding: 2px;
     text-align: center;
     border: none;
+   background: transparent;
 }
 
 .custom-product-template .quantity-selctor button {
