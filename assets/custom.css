@@ -225,6 +225,13 @@ ul.subsubmenu {
     border: 0.5px solid #EFEFEF;
     cursor: pointer;
 } */
+.custom-product-template .quantity-selctor button svg {
+    width: 1rem;
+}
+
+
+
+
 
 /*/ ////Custom Product Page  END////////*/
 
