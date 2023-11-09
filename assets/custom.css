@@ -218,6 +218,28 @@ ul.subsubmenu {
     border-radius: 30px;
     cursor: pointer;
 }
+.custom-product-template .quantity-selctor input {
+    max-width: 50px;
+    padding: 2px;
+    text-align: center;
+    border: none;
+}
+
+.custom-product-template .quantity-selctor button {
+    border: none;
+    background: unset;
+    cursor: pointer;
+}
+
+.custom-product-template .quantity-selctor {
+    max-width: 130px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid #EFEFEF;
+    padding: 10px 0;
+    justify-content: space-evenly;
+}
 /* .custom-product-template .quantity-selctor button {
     display: inline-block;
     background: white;
