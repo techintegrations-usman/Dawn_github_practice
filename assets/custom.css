@@ -217,8 +217,8 @@ ul.subsubmenu {
     border: 1px solid black;
 }
 .option-with-values label:hover {
-    color: black;
-    background: white;
+    color: #fff;
+    background: black;
     border-color: black;
 }
 .custom-product-template .quantity-selctor input {
