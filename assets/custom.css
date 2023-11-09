@@ -191,7 +191,20 @@ ul.subsubmenu {
 .product-option {
   margin: 20px 0;
 }
+.product-options fiedlset legend {
+    color: black;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
 
+.product-options fiedlset .option-with-values {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 20px;
+}
 /*/ ////Custom Product Page  END////////*/
 
 /*/ ////Custom Login Page  START////////*/
