@@ -273,9 +273,9 @@ ul.subsubmenu {
     background: white;
     border-color: black;
 }
-.product-prices p.product-compare {
+.product-prices product-compare {
     text-decoration: line-through;
-  font-size: 14px;
+    font-size: 14px;
     line-height: 22px;
 }
 .product-info .product-prices p {
