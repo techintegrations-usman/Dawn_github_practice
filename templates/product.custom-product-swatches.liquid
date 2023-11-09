@@ -162,9 +162,13 @@
         // Find Selected Options
         var selectedOptions = []
         document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
-         selectedOptions.push(radio.value)
-          selectedOptions.style.color="white";
-          selectedOptions.style.backgroundColor="black";
+         selectedOptions.push(radio.value);
+
+        // Set text color and background color for selected options
+          selectedOptions.forEach(option => {
+          option.style.color = "white";
+          option.style.backgroundColor = "black";
+    });
         })
 
         // Finding Matched Variants
