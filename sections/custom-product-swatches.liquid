@@ -184,6 +184,7 @@
 {% endstylesheet %}
 
 {% javascript %}
+
    document.addEventListener('DOMContentLoaded', function () {
     var product = {{product | json}}
     document.querySelectorAll('.product-options input[type="radio"]').forEach(radio =>{
