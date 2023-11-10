@@ -229,6 +229,8 @@
         document.querySelector('.qs-plus').addEventListener('click', () => {
     var currentval = Number(document.querySelector('#quantity').value);
     document.querySelector('#quantity').value = currentval + 1;
+
+    // Remove the disabled class when increasing the value
     document.querySelector('.qs-minus').classList.remove('quantity__button_disabled');
   });
 
@@ -238,6 +240,9 @@
 
     if (currentval > 1) {
       document.querySelector('#quantity').value = currentval - 1;
+    }
+
+    // Toggle the class based on the current value
     quantityButton.classList.toggle('quantity__button_disabled', currentval <= 1);
   });
 </script>
