@@ -287,7 +287,10 @@ ul.subsubmenu {
     line-height: 35px;
     margin: 0;
 }
-
+.quantity__button_disabled {
+    cursor: not-allowed !important;
+    opacity: .5;
+}
 
 
 /*/ ////Custom Product Page  END////////*/
