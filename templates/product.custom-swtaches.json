@@ -27,17 +27,10 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
-    },
-    "4b7c1a7e-9fb4-4e00-99d7-72d876d37c8f": {
-      "type": "custom__featuerd-products",
-      "disabled": true,
-      "settings": {
-      }
     }
   },
   "order": [
     "5ef234a8-a71a-405c-8be1-7d14bc3ac05f",
-    "related-products",
-    "4b7c1a7e-9fb4-4e00-99d7-72d876d37c8f"
+    "related-products"
   ]
 }
