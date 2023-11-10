@@ -41,8 +41,9 @@
   </div>
   <div class="product-info">
     <h3>{{ product.title }}</h3>
-
-    <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
+    {% if section.settings.hide_sku %}
+      <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
+    {% endif %}
     <div class="product-prices">
       <p class="product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}hide {% endunless %}">
         {{ product.selected_or_first_available_variant.compare_at_price | money }}
