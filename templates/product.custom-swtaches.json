@@ -50,6 +50,7 @@
     },
     "4b7c1a7e-9fb4-4e00-99d7-72d876d37c8f": {
       "type": "custom__featuerd-products",
+      "disabled": true,
       "settings": {
       }
     }
