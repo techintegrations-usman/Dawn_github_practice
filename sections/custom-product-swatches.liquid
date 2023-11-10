@@ -235,6 +235,7 @@
     var curentval = Number(document.querySelector('#quantity').value)
     if (curentval> 1){
     document.querySelector('#quantity').value = curentval - 1;
+      qs-minus.classList.add('quantity__button_disabled');
      }
   })
 </script>
