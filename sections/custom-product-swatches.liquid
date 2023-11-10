@@ -239,11 +239,8 @@
       document.querySelector('#quantity').value = currentval - 1;
     }
 
-    // Check if the current value is equal to 1, and disable pointer events accordingly
-    if (currentval === 1) {
-      quantityButton.classList.add('quantity__button_disabled');
-      quantityButton.style.pointerEvents = "none";
-    }
+    // Toggle the class based on the current value
+    quantityButton.classList.toggle('quantity__button_disabled', currentval <= 1);
   });
 </script>
 
