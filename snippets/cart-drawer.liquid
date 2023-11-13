@@ -352,7 +352,7 @@
       </cart-drawer-items>
 
       <div class="bundle-products-row">
-        {% for product in products limit: 3 %}
+        {% for product in collection.products limit: 3 %}
           <div class="bundle-products">
             <div class="img">
               <img src="{{ product.featured_image | img_url: '400x' }}">
