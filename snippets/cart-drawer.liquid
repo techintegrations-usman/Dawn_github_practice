@@ -475,3 +475,20 @@
     });
   });
 </script>
+
+<!-- Add jQuery library if not already included -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+  $(document).ready(function() {
+    $('form[action="/cart/add"]').submit(function(event) {
+      event.preventDefault();
+      var formData = $(this).serialize();
+
+      $.post('/cart/add.js', formData, function(cart) {
+        // Handle the response, possibly update the cart drawer
+        console.log(cart);
+      });
+    });
+  });
+</script>
