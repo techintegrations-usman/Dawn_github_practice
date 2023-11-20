@@ -1,12 +1,58 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top}}px;
+      padding-bottom: {{ section.settings.padding_bottom}}px;
+      background-color:{{section.settings.section_bg}};
   }
+
+    @media only screen and (max-width: 749px) {
+      #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.mb_padding_top }}px;
+        padding-bottom: {{ section.settings.mb_padding_bottom }}px;
+      }
+    }
+{%- endstyle -%}
+{% schema %}
+{
+  "name": "Section name",
+  "settings": [
+    {
+    "type": "header",
+    "content": "Spacing Desktop"
+  },
+  {
+    "type": "number",
+    "id": "padding_top",
+    "label": "Top spacing",
+    "default": 0
+  },
+  {
+    "type": "number",
+    "id": "padding_bottom",
+    "label": "Bottom spacing",
+    "default": 0
+  },
+  {
+    "type": "header",
+    "content": "Spacing Mobile"
+  },
+  {
+    "type": "number",
+    "id": "mb_padding_top",
+    "label": "Top spacing",
+    "default": 0
+  },
+  {
+    "type": "number",
+    "id": "mb_padding_bottom",
+    "label": "Bottom spacing",
+    "default": 0
+  },
+  {
+    "type": "color",
+    "id": "section_bg",
+    "label": "Section Background"
+  }
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
