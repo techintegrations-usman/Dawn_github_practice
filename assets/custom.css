@@ -45,6 +45,19 @@ ul.thumbs-image li {
   width: 100%;
   max-width: 100%;
 }
+
+/*/////Custom Cart Drawer start////////*/
+
+
+.bundle-products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+/*/////Custom Cart Drawer start////////*/
+
+
 /*/////Custom Menu Section start////////*/
 .Custom-menu-section h2 {
   text-align: center;
