@@ -1457,7 +1457,8 @@
       {
         "type": "checkbox",
         "id": "show_bundle_product",
-        "label": "Show Bundle Products"
+        "label": "Show Bundle Products",
+        "default": false
       },
       {
         "type": "text",
