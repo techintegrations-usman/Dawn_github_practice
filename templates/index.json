@@ -110,6 +110,17 @@
       "disabled": true,
       "settings": {
       }
+    },
+    "8e521f8b-8032-4dc7-b3d6-e57a88680ead": {
+      "type": "custom-menu-handle",
+      "settings": {
+        "menu-handle": "custom menu",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "mb_padding_top": 0,
+        "mb_padding_bottom": 0,
+        "section_bg": "#334fb4"
+      }
     }
   },
   "order": [
@@ -119,6 +130,7 @@
     "a7d2b0a2-8711-4b55-869e-be316582788b",
     "6319257c-5a47-48ef-924b-36654599fc61",
     "4ed69f83-6533-42f8-bed1-b9c76901499c",
-    "287ef773-286a-40d2-b9dd-3b67e64d041b"
+    "287ef773-286a-40d2-b9dd-3b67e64d041b",
+    "8e521f8b-8032-4dc7-b3d6-e57a88680ead"
   ]
 }
