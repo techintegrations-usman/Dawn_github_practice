@@ -365,33 +365,7 @@
         </div>
       </cart-drawer-items>
 
-      {% if settings.show_bundle_product %}
-        {% assign products = collections[settings.cart_bundle_product].products %}
-        <div class="cart-bundle-products">
-          {% if settings.bundle_product_heading != blank %}
-            <h2 class="heading">{{ settings.bundle_product_heading }}</h2>
-          {% endif %}
-          <div class="bundle-products-row">
-            {% for product in products limit: 3 %}
-              <div class="bundle-products">
-                <div class="img">
-                  <img src="{{ product.featured_image | img_url: '400x' }}">
-                </div>
-                <div class="info">
-                  <h2>{{ product.title }}</h2>
-                  <p>{{ product.price | money }}</p>
-                </div>
-                <div class="atc">
-                  <form action="/cart/add" method="POST" enctype="multipart/form-data">
-                    <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
-                    <button type="submit" class="button small-btn">Add</button>
-                  </form>
-                </div>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-      {% endif %}
+      usman
 
       <div class="drawer__footer">
         {%- if settings.show_cart_note -%}
