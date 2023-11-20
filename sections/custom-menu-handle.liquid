@@ -15,8 +15,8 @@
 <div class="custom-menu-handle-section">
   <h1>Custom Menu Handel</h1>
   <div class="main-menu">
-    {% assign linkz = linklists[section.settings['menu-handle']] %}
-    {% for link in linkz %}
+    {% assign menu = linklists[section.settings['menu-handle']] %}
+    {% for link in menu.links %}
       <h1>{{ link.title }}</h1>
     {% endfor %}
   </div>
