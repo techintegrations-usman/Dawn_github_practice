@@ -366,7 +366,7 @@
       </cart-drawer-items>
 
       {% if settings.show_bundle_product %}
-        {% assign products = settings.product_list.products %}
+        {% assign products = collections[settings.product_list].products %}
         <div class="cart-bundle-products">
           {% if settings.cart_drawer_heading != blank %}
             <h2 class="heading">{{ settings.cart_drawer_heading }}</h2>
