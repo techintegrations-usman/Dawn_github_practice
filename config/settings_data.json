@@ -117,7 +117,7 @@
     "show_vendor": false,
     "show_cart_note": true,
     "cart_drawer_collection": "shirts",
-    "show_bundle_product": true,
+    "show_bundle_product": false,
     "cart_drawer_heading": "Upsells Product",
     "product_list": [
       "black-shirt",
