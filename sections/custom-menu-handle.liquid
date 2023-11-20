@@ -12,6 +12,15 @@
       }
     }
 {%- endstyle -%}
+<div class="custom-menu-handle-section">
+  <div class="main-menu">
+    {% assign linkz = linklists[section.settings['menu-handle']].links %}
+    {% for link in links %}
+      <h1>{{ link.title }}</h1>
+    {% endfor %}
+  </div>
+</div>
+
 {% schema %}
 {
   "name": "Custom Menu Handle",
