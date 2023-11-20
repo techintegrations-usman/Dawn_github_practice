@@ -96,7 +96,6 @@
     "6319257c-5a47-48ef-924b-36654599fc61": {
       "type": "custom-menu-section",
       "settings": {
-        "menu": "custom-menu"
       }
     },
     "4ed69f83-6533-42f8-bed1-b9c76901499c": {
@@ -114,7 +113,7 @@
     "8e521f8b-8032-4dc7-b3d6-e57a88680ead": {
       "type": "custom-menu-handle",
       "settings": {
-        "menu-handle": "custom menu",
+        "menu-handle": "Footer menu",
         "padding_top": 20,
         "padding_bottom": 20,
         "mb_padding_top": 0,
