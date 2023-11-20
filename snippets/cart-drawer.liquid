@@ -366,37 +366,31 @@
       </cart-drawer-items>
 
       {% if settings.show_bundle_product %}
-        {% assign collection_handle = settings.product_list %}
-        {% assign collection = collections[collection_handle] %}
-
-        {% if collection %}
-          {% assign products = collection.products %}
-          <!-- Now you can use the 'products' variable as needed -->
-          <div class="cart-bundle-products">
-            {% if settings.cart_drawer_heading != blank %}
-              <h2 class="heading">{{ settings.cart_drawer_heading }}</h2>
-            {% endif %}
-            <div class="bundle-products-row">
-              {% for product in products limit: 3 %}
-                <div class="bundle-products">
-                  <div class="img">
-                    <img src="{{ product.featured_image | img_url: '400x' }}">
-                  </div>
-                  <div class="info">
-                    <h2>{{ product.title }}</h2>
-                    <p>{{ product.price | money }}</p>
-                  </div>
-                  <div class="atc">
-                    <form action="/cart/add" method="POST" enctype="multipart/form-data">
-                      <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
-                      <button type="submit" class="button small-btn">Add</button>
-                    </form>
-                  </div>
+        {% assign products = collections[settings.product_list].products %}
+        <div class="cart-bundle-products">
+          {% if settings.cart_drawer_heading != blank %}
+            <h2 class="heading">{{ settings.cart_drawer_heading }}</h2>
+          {% endif %}
+          <div class="bundle-products-row">
+            {% for product in products limit: 3 %}
+              <div class="bundle-products">
+                <div class="img">
+                  <img src="{{ product.featured_image | img_url: '400x' }}">
                 </div>
-              {% endfor %}
-            </div>
+                <div class="info">
+                  <h2>{{ product.title }}</h2>
+                  <p>{{ product.price | money }}</p>
+                </div>
+                <div class="atc">
+                  <form action="/cart/add" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+                    <button type="submit" class="button small-btn">Add</button>
+                  </form>
+                </div>
+              </div>
+            {% endfor %}
           </div>
-        {% endif %}
+        </div>
       {% endif %}
 
       <div class="drawer__footer">
