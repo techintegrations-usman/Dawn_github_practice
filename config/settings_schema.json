@@ -1455,6 +1455,11 @@
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       },
       {
+        "type": "text",
+        "id": "cart_drawer_heading",
+        "label": "Upsells Product Heading"
+      },
+      {
         "type": "product_list",
         "id": "product_list",
         "label": "Products",
