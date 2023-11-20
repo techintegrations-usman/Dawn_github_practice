@@ -1455,6 +1455,11 @@
         "info": "t:settings_schema.cart.settings.cart_drawer.collection.info"
       },
       {
+        "type": "checkbox",
+        "id": "show_bundle_product",
+        "label": "Show Bundle Products"
+      },
+      {
         "type": "text",
         "id": "cart_drawer_heading",
         "label": "Upsells Product Heading"
