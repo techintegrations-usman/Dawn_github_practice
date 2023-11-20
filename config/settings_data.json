@@ -117,12 +117,12 @@
     "show_vendor": false,
     "show_cart_note": true,
     "cart_drawer_collection": "shirts",
-    "show_bundle_product": false,
+    "show_bundle_product": true,
     "cart_drawer_heading": "Upsells Product",
     "product_list": [
       "black-shirt",
-      "black-shirt-test",
-      "casual-shirt"
+      "casual-shirt",
+      "black-shirt-test"
     ],
     "checkout_logo_image": "shopify:\/\/shop_images\/Screenshot_2023-07-06_192834-removebg-preview.png",
     "checkout_logo_position": "center",
