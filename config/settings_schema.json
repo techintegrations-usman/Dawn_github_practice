@@ -1468,8 +1468,7 @@
       {
         "type": "product_list",
         "id": "product_list",
-        "label": "Products",
-        "limit": 3
+        "label": "Products"
       }
     ]
   }
