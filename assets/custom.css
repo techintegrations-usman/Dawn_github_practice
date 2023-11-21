@@ -51,7 +51,7 @@ ul.thumbs-image li {
 
 .bundle-products {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
   align-items: center;
     justify-content: space-between;
 }
