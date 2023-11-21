@@ -44,7 +44,14 @@
               // Fetch updated cart content and update the drawer
               const updatedCartContent = await fetch("/cart.js");
               // Use the updatedCartContent to update the cart drawer dynamically
+              const res = await fetch("/?section_id=cart-drawer");
+              const text = await res.text();
+              const html = document.createElement("div");
+              html.innerHTML = text;
 
+              const newBox = html.querySelector(".cart-drawer").innerHTML;
+
+  document.querySelector(".cart-drawer").innerHTML = newBox;
               console.log("Product added successfully!");
           } else {
               console.error("Failed to add product to the cart");
