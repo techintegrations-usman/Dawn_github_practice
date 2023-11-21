@@ -58,7 +58,7 @@
 
     const customAddToCart = document.querySelectorAll('form[action="/cart/add"]');
     customAddToCart.forEach(form)=>{
-    customAddToCart.addEventListener('submit', e=>{
+    form.addEventListener('submit', (e) => {
       e.preventDefault();
       e.stopPropagation();
       console.log('hey')
