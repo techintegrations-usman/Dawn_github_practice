@@ -25,3 +25,30 @@
     </div>
   </div>
 {% endif %}
+<script>
+     const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
+         addToCartFormsScript.forEach((form) => {
+          form.addEventListener("submit", async (event) => {
+          // Prevent normal submission
+          event.preventDefault();
+
+          // Submit form with Ajax
+          const formData = new FormData(form);
+          const response = await fetch("{{ '/cart/add' | url }}", {
+              method: "post",
+              body: formData,
+          });
+
+          // Check if the request was successful
+          if (response.ok) {
+              // Fetch updated cart content and update the drawer
+              const updatedCartContent = await fetch("/cart.js");
+              // Use the updatedCartContent to update the cart drawer dynamically
+
+              console.log("Product added successfully!");
+          } else {
+              console.error("Failed to add product to the cart");
+          }
+      });
+  });
+</script>
