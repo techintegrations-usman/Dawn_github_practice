@@ -30,6 +30,7 @@
          addToCartFormsScript.forEach((form) => {
           form.addEventListener("submit", async (event) => {
           event.preventDefault();
+          event.stopPropagation();
           const formData = new FormData(form);
           const response = await fetch("{{ '/cart/add' | url }}", {
               method: "post",
