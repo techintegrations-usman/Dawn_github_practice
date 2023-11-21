@@ -26,6 +26,7 @@
   </div>
 {% endif %}
 <script>
+  {% comment %}
      const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
          addToCartFormsScript.forEach((form) => {
           form.addEventListener("submit", async (event) => {
@@ -51,5 +52,14 @@
               console.error("Failed to add product to the cart");
           }
       });
+  });
+  {% endcomment %}
+
+
+  const customAddToCart = document.querySelectorAll('form[action="/cart/add"]');
+  customAddToCart.addEventListener('submit', e=>{
+    e.preventDefault();
+    e.stopPropagation();
+    console.log('hey')
   });
 </script>
