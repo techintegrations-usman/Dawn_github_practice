@@ -26,7 +26,7 @@
   </div>
 {% endif %}
 <script>
-       const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
+      const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
   addToCartFormsScript.forEach((form) => {
       form.addEventListener("submit", async (event) => {
           event.preventDefault();
@@ -34,32 +34,41 @@
 
           try {
               const formData = new FormData(form);
-              const response = await fetch("{{ '/cart/add' | url }}", {
-                  method: "POST",
-                  body: formData,
-              });
+              const xhr = new XMLHttpRequest();
 
-              if (response.ok) {
-                  // Fetch updated cart content and update the drawer
-                  const updatedCartContent = await fetch("/cart.js");
-                  const text = await updatedCartContent.text();
-                  const html = document.createElement("div");
-                  html.innerHTML = text;
+              xhr.open("POST", "{{ '/cart/add' | url }}", true);
+              xhr.onreadystatechange = function () {
+                  if (xhr.readyState === 4) {
+                      if (xhr.status === 200) {
+                          // Fetch updated cart content and update the drawer
+                          fetch("/cart.js")
+                              .then((response) => response.text())
+                              .then((text) => {
+                                  const html = document.createElement("div");
+                                  html.innerHTML = text;
 
-                  // Check if .cart-drawer element exists
-                  const cartDrawerElement = html.querySelector(".cart-drawer");
-                  if (cartDrawerElement) {
-                      const newBox = cartDrawerElement.innerHTML;
-                      document.querySelector(".cart-drawer").innerHTML = newBox;
+                                  // Check if .cart-drawer element exists
+                                  const cartDrawerElement = html.querySelector(".cart-drawer");
+                                  if (cartDrawerElement) {
+                                      const newBox = cartDrawerElement.innerHTML;
+                                      document.querySelector(".cart-drawer").innerHTML = newBox;
 
-                      // Clear the form after successful submission
-                      form.reset();
-                  } else {
-                      console.error("Failed to find .cart-drawer element in the response");
+                                      // Clear the form after successful submission
+                                      form.reset();
+                                  } else {
+                                      console.error("Failed to find .cart-drawer element in the response");
+                                  }
+                              })
+                              .catch((error) => {
+                                  console.error("Failed to update cart drawer:", error);
+                              });
+                      } else {
+                          console.error("Failed to add product to the cart");
+                      }
                   }
-              } else {
-                  console.error("Failed to add product to the cart");
-              }
+              };
+
+              xhr.send(formData);
           } catch (error) {
               console.error("An error occurred:", error);
           }
