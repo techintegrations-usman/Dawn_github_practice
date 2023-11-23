@@ -40,28 +40,23 @@
               xhr.onreadystatechange = function () {
                   if (xhr.readyState === 4) {
                       if (xhr.status === 200) {
-                          // Fetch updated cart content and update the drawer
-                          fetch("/cart.js")
-                              .then((response) => response.text())
-                              .then((text) => {
-                                  const html = document.createElement("div");
-                                  html.innerHTML = text;
+                          // Log the entire HTML response to the console
+                          console.log(xhr.responseText);
 
-                                  // Check if .cart-drawer element exists
-                                  const cartDrawerElement = html.querySelector(".cart-drawer");
-                                  if (cartDrawerElement) {
-                                      const newBox = cartDrawerElement.innerHTML;
-                                      document.querySelector(".cart-drawer").innerHTML = newBox;
+                          const html = document.createElement("div");
+                          html.innerHTML = xhr.responseText;
 
-                                      // Clear the form after successful submission
-                                      form.reset();
-                                  } else {
-                                      console.error("Failed to find .cart-drawer element in the response");
-                                  }
-                              })
-                              .catch((error) => {
-                                  console.error("Failed to update cart drawer:", error);
-                              });
+                          // Check if .cart-drawer element exists
+                          const cartDrawerElement = html.querySelector(".cart-drawer");
+                          if (cartDrawerElement) {
+                              const newBox = cartDrawerElement.innerHTML;
+                              document.querySelector(".cart-drawer").innerHTML = newBox;
+
+                              // Clear the form after successful submission
+                              form.reset();
+                          } else {
+                              console.error("Failed to find .cart-drawer element in the response");
+                          }
                       } else {
                           console.error("Failed to add product to the cart");
                       }
