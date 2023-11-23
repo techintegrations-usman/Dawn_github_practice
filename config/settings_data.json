@@ -116,7 +116,7 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": true,
-    "cart_drawer_collection": "shirts",
+    "cart_drawer_collection": "",
     "show_bundle_product": true,
     "cart_drawer_heading": "Upsells Product",
     "product_list": [
