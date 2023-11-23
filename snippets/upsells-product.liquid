@@ -26,9 +26,9 @@
   </div>
 {% endif %}
 <script>
-       const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
-  addToCartFormsScript.forEach((form) => {
-      form.addEventListener("submit", async (event) => {
+     const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
+         addToCartFormsScript.forEach((form) => {
+          form.addEventListener("submit", async (event) => {
           event.preventDefault();
           event.stopPropagation();
           const formData = new FormData(form);
@@ -36,7 +36,6 @@
               method: "post",
               body: formData,
           });
-
           if (response.ok) {
               // Fetch updated cart content and update the drawer
               const updatedCartContent = await fetch("/cart.js");
@@ -47,9 +46,7 @@
               html.innerHTML = text;
               const newBox = html.querySelector(".cart-drawer").innerHTML;
               document.querySelector(".cart-drawer").innerHTML = newBox;
-
-              // Clear the form after successful submission
-              form.reset();
+              console.log("Product added successfully!");
           } else {
               console.error("Failed to add product to the cart");
           }
