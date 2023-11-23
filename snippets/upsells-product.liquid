@@ -26,43 +26,30 @@
   </div>
 {% endif %}
 <script>
-
-         const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
-             addToCartFormsScript.forEach((form) => {
-              form.addEventListener("submit", async (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              const formData = new FormData(form);
-              const response = await fetch("{{ '/cart/add' | url }}", {
-                  method: "post",
-                  body: formData,
-              });
-              if (response.ok) {
-                  // Fetch updated cart content and update the drawer
-                  const updatedCartContent = await fetch("/cart.js");
-                  // Use the updatedCartContent to update the cart drawer dynamically
-                  const res = await fetch("/?section_id=cart-drawer");
-                  const text = await res.text();
-                  const html = document.createElement("div");
-                  html.innerHTML = text;
-                  const newBox = html.querySelector(".cart-drawer").innerHTML;
-                  document.querySelector(".cart-drawer").innerHTML = newBox;
-                  console.log("Product added successfully!");
-              } else {
-                  console.error("Failed to add product to the cart");
-              }
+     const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
+         addToCartFormsScript.forEach((form) => {
+          form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const formData = new FormData(form);
+          const response = await fetch("{{ '/cart/add' | url }}", {
+              method: "post",
+              body: formData,
           });
+          if (response.ok) {
+              // Fetch updated cart content and update the drawer
+              const updatedCartContent = await fetch("/cart.js");
+              // Use the updatedCartContent to update the cart drawer dynamically
+              const res = await fetch("/?section_id=cart-drawer");
+              const text = await res.text();
+              const html = document.createElement("div");
+              html.innerHTML = text;
+              const newBox = html.querySelector(".cart-drawer").innerHTML;
+              document.querySelector(".cart-drawer").innerHTML = newBox;
+              console.log("Product added successfully!");
+          } else {
+              console.error("Failed to add product to the cart");
+          }
       });
-
-
-  {% comment %}
-      const customAddToCart = document.querySelectorAll('form[action="/cart/add"]');
-        customAddToCart.forEach((form) => {
-        form.addEventListener('submit', cartbuttonaction)
-    });
-    function cartbuttonaction(){
-      const xhttp = new XMLHttpRequest();
-      xhttp.open('post', '/cart/add', true);
-    }
-    {% endcomment %}
+  });
 </script>
