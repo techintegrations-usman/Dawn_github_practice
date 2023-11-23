@@ -28,16 +28,9 @@
 <script>
        const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
   addToCartFormsScript.forEach((form) => {
-      let formSubmitted = false;
-
       const onSubmit = async (event) => {
           event.preventDefault();
           event.stopPropagation();
-
-          // Check if the form has already been submitted
-          if (formSubmitted) {
-              return;
-          }
 
           try {
               const formData = new FormData(form);
@@ -62,8 +55,8 @@
                               // Clear the form after successful submission
                               form.reset();
 
-                              // Set the flag to true after successful submission
-                              formSubmitted = true;
+                              // Remove the event listener from the form
+                              form.removeEventListener("submit", onSubmit);
                           } else {
                               console.error("Failed to find .cart-drawer element in the response");
                           }
