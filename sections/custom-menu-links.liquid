@@ -60,7 +60,19 @@
         seeMoreButton.innerHTML = 'Less';
       } else {
         seeMoreButton.innerHTML = 'See more';
+        hideAdditionalLinks();
       }
+    }
+
+    function hideAdditionalLinks() {
+      var menuItems = document.querySelectorAll('.menu-link');
+      menuItems.forEach(function(item) {
+        if (item.classList.contains('hidden-menu-item')) {
+          item.style.display = 'none';
+        } else {
+          item.style.display = 'list-item';
+        }
+      });
     }
   </script>
   <style>
