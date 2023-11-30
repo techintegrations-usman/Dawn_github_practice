@@ -115,7 +115,7 @@
       "type": "custom-menu-handle",
       "disabled": true,
       "settings": {
-        "menu-handle": "Footer menu",
+        "menu_handle": "Test Menu",
         "padding_top": 20,
         "padding_bottom": 20,
         "mb_padding_top": 0,
