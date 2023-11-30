@@ -13,15 +13,15 @@
     }
 {%- endstyle -%}
 
-{% assign menu-handle = linklists[section.settings.menu_handle].links %}
+{% assign menu-handel = linklists[section.settings.menu_handle].links %}
 
 <div class="custom-menu-link-section page-width">
-  <h1>Custom Menu Handle</h1>
+  <h1>Custom Menu Handel</h1>
 
   <div class="main-menu">
     <ul class="menu" id="parent">
-      {% for link in menu-handle %}
-        <li class="menu-link {% if forloop.index > 5 %}hidden-menu-item{% endif %}">
+      {% for link in menu-handel %}
+        <li class="menu-link">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
             <ul class="menu dropdown-child">
@@ -44,39 +44,15 @@
         </li>
       {% endfor %}
     </ul>
-    <button id="see-more" onclick="toggleMenu()">See more</button>
   </div>
-
-  <script>
-    function toggleMenu() {
-      var menuItems = document.querySelectorAll('.menu-link');
-      var seeMoreButton = document.getElementById('see-more');
-
-      menuItems.forEach(function(item, index) {
-        item.style.display = (index >= 5) ? 'none' : 'list-item';
-      });
-
-      if (seeMoreButton.innerHTML === 'See more') {
-        seeMoreButton.innerHTML = 'Less';
-      } else {
-        seeMoreButton.innerHTML = 'See more';
-        toggleHiddenClass();
-      }
-    }
-
-    function toggleHiddenClass() {
-      var menuItems = document.querySelectorAll('.menu-link');
-      menuItems.forEach(function(item, index) {
-        item.style.display = (index >= 5) ? 'none' : 'list-item';
-      });
-    }
-  </script>
-  <style>
-    .hidden-menu-item {
-      display: none;
-    }
-  </style>
 </div>
+
+<script>
+   const sixth = document.querySelector('#parent :nth-child(6)');
+    if(nth-child > 6){
+    }
+  console.log(sixth);
+</script>
 
 {% schema %}
 {
