@@ -114,7 +114,7 @@
     "80fecfee-7b7b-4c9c-bab3-6212e0a3b7d8": {
       "type": "custom-menu-handle",
       "settings": {
-        "menu_handle": "Test",
+        "menu_handle": "test",
         "padding_top": 20,
         "padding_bottom": 20,
         "mb_padding_top": 0,
