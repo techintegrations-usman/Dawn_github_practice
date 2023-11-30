@@ -21,7 +21,7 @@
   <div class="main-menu">
     <ul class="menu" id="parent">
       {% for link in menu-handel %}
-        {% if link.links.size > 6 %}
+        {% unless link.links.size > 6 %}
           <li class="menu-link">
             <a href="{{ link.url }}">{{ link.title }}</a>
             {% if link.links.size > 0 %}
@@ -43,7 +43,7 @@
               </ul>
             {% endif %}
           </li>
-        {% endif %}
+        {% endunless %}
       {% endfor %}
     </ul>
   </div>
