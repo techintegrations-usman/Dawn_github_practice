@@ -12,38 +12,42 @@
       }
     }
 {%- endstyle -%}
-<div class="custom-menu-handle-section">
-  <h1>Custom Menu Handel</h1>
+<div
+  class="custom-menu-handle-section"
+  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px; background-color: {{ section.settings.section_bg }};"
+>
+  <h1>Custom Menu Handle</h1>
   <div class="main-menu">
     <ul class="menu">
       {% assign handle = section.settings.menu_handle | handleize %}
-      {% assign links = linklists[handle].links %}
-
-      {% for link in links %}
-        <li class="menu-link">
-          <a href="{{ link.url }}">{{ link.title }}</a>
-
-          {% if link.links.size > 0 %}
-            <ul class="menu dropdown-child">
-              {% for child_link in link.links %}
-                <li class="menu-link">
-                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-
-                  {% if child_link.links.size > 0 %}
-                    <ul class="menu dropdown-grandchild">
-                      {% for grandchild_link in child_link.links %}
-                        <li class="menu-link">
-                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
+      {% if linklists[handle] %}
+        {% assign links = linklists[handle].links %}
+        {% for link in links %}
+          <li class="menu-link">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links.size > 0 %}
+              <ul class="menu dropdown-child">
+                {% for child_link in link.links %}
+                  <li class="menu-link">
+                    <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                    {% if child_link.links.size > 0 %}
+                      <ul class="menu dropdown-grandchild">
+                        {% for grandchild_link in child_link.links %}
+                          <li class="menu-link">
+                            <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                          </li>
+                        {% endfor %}
+                      </ul>
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      {% else %}
+        <p>No links found for the specified menu handle.</p>
+      {% endif %}
     </ul>
   </div>
 </div>
