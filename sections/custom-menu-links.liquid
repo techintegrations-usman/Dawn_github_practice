@@ -21,7 +21,12 @@
   <div class="main-menu">
     <ul class="menu" id="parent">
       {% for link in menu-handle %}
-        <li class="menu-link">
+        <li
+          class="menu-link"
+          {% if forloop.index > 5 %}
+            class="hidden-menu-item" style="display:none"
+          {% endif %}
+        >
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
             <ul class="menu dropdown-child">
@@ -53,7 +58,7 @@
       var seeMoreButton = document.getElementById('see-more');
 
       menuItems.forEach(function(item, index) {
-        item.classList.toggle('hidden-menu-item', index > 5);
+        item.classList.toggle('hidden-menu-item', index >= 5);
       });
 
       if (seeMoreButton.innerHTML === 'See more') {
