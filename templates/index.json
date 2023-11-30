@@ -115,11 +115,11 @@
       "type": "custom-menu-handle",
       "settings": {
         "menu_handle": "Test",
-        "padding_top": 0,
-        "padding_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20,
         "mb_padding_top": 0,
         "mb_padding_bottom": 0,
-        "section_bg": ""
+        "section_bg": "#1773b0"
       }
     }
   },
