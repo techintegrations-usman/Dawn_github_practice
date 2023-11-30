@@ -13,7 +13,7 @@
     }
 {%- endstyle -%}
 
-{% assign hand = linklists[section.settings.menu_handle] %}
+{% assign hand = linklists[section.settings.menu_handle].links %}
 {{ handle }}
 
 <div class="custom-menu-handle-section">
@@ -21,7 +21,7 @@
 
   <div class="main-menu">
     <ul class="menu">
-      {% for link in hand.links %}
+      {% for link in hand %}
         <li class="menu-link">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
