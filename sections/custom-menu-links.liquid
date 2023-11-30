@@ -21,12 +21,7 @@
   <div class="main-menu">
     <ul class="menu">
       {% for link in menu-handel %}
-        <li
-          class="menu-link"
-          {% if link.size > 6 %}
-            sssssss
-          {% endif %}
-        >
+        <li class="menu-link">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
             <ul class="menu dropdown-child">
