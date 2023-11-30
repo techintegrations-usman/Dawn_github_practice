@@ -16,7 +16,8 @@
   <h1>Custom Menu Handel</h1>
   <div class="main-menu">
     <ul class="menu">
-      {% for link in section.settings.menu_handle %}
+      {% assign handle = linklists[section.settings.menu_handle] %}
+      {% for link in handle %}
         <li class="menu-link">
           <a href="{{ link.url }}">{{ link.title }}</a>
 
