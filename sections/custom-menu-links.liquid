@@ -55,6 +55,7 @@
       menuItems.forEach(function(item, index) {
         if (index > 5) {
           item.classList.toggle('hidden-menu-item');
+          item.classList.toggle('show-menu-item');
         }
       });
 
@@ -67,17 +68,19 @@
     }
 
     function toggleHiddenClass() {
-      var menuItems = document.querySelectorAll('.menu-link');
-      menuItems.forEach(function(item, index) {
-        if (index > 5) {
-          item.classList.add('hidden-menu-item');
-        }
+      var menuItems = document.querySelectorAll('.menu-link.show-menu-item');
+      menuItems.forEach(function(item) {
+        item.classList.remove('hidden-menu-item', 'show-menu-item');
       });
     }
   </script>
   <style>
     .hidden-menu-item {
       display: none;
+    }
+
+    .show-menu-item {
+      display: list-item !important;
     }
   </style>
 </div>
