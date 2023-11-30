@@ -49,11 +49,13 @@
 
   <script>
     function toggleMenu() {
-      var menuItems = document.querySelectorAll('.menu-link.hidden-menu-item');
+      var menuItems = document.querySelectorAll('.menu-link');
       var seeMoreButton = document.getElementById('see-more');
 
-      menuItems.forEach(function(item) {
-        item.classList.toggle('hidden-menu-item');
+      menuItems.forEach(function(item, index) {
+        if (index > 5) {
+          item.classList.toggle('hidden-menu-item');
+        }
       });
 
       if (seeMoreButton.innerHTML === 'See more') {
