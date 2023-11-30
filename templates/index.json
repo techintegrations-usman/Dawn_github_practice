@@ -111,15 +111,15 @@
       "settings": {
       }
     },
-    "80fecfee-7b7b-4c9c-bab3-6212e0a3b7d8": {
-      "type": "custom-menu-handle",
+    "6e8764b4-cf4d-46e3-8c10-306cd4622d01": {
+      "type": "custom-menu-links",
       "settings": {
-        "menu_handle": "Main menu",
-        "padding_top": 20,
-        "padding_bottom": 20,
+        "menu_handle": "test",
+        "padding_top": 0,
+        "padding_bottom": 0,
         "mb_padding_top": 0,
         "mb_padding_bottom": 0,
-        "section_bg": "#1773b0"
+        "section_bg": ""
       }
     }
   },
@@ -131,6 +131,6 @@
     "6319257c-5a47-48ef-924b-36654599fc61",
     "4ed69f83-6533-42f8-bed1-b9c76901499c",
     "287ef773-286a-40d2-b9dd-3b67e64d041b",
-    "80fecfee-7b7b-4c9c-bab3-6212e0a3b7d8"
+    "6e8764b4-cf4d-46e3-8c10-306cd4622d01"
   ]
 }
