@@ -15,12 +15,33 @@
 <div class="custom-menu-handle-section">
   <h1>Custom Menu Handel</h1>
   <div class="main-menu">
-    {% assign menuHandle = section.settings['menu-handle'] %}
-    {% assign menu = linklists[menuHandle].links %}
+    <ul class="menu">
+      {% for link in section.settings.menu_handle.links %}
+        <li class="menu-link">
+          <a href="{{ link.url }}">{{ link.title }}</a>
 
-    {% for link in menu %}
-      <h1>{{ link.title }}</h1>
-    {% endfor %}
+          {% if link.links.size > 0 %}
+            <ul class="menu dropdown-child">
+              {% for child_link in link.links %}
+                <li class="menu-link">
+                  <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+
+                  {% if child_link.links.size > 0 %}
+                    <ul class="menu dropdown-grandchild">
+                      {% for grandchild_link in child_link.links %}
+                        <li class="menu-link">
+                          <a href="{{ grandchild_link.url }}">{{ grandchild_link.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </div>
 
@@ -31,7 +52,7 @@
   "settings": [
   {
     "type" : "text",
-    "id" : "menu-handle",
+    "id" : "menu_handle",
     "label" : "Menu Handle"
   },
   {
