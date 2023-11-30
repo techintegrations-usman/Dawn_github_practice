@@ -49,18 +49,30 @@
 
   <script>
     function toggleMenu() {
-      var menuItems = document.querySelectorAll('.menu-link.hidden-menu-item');
+      var menuItems = document.querySelectorAll('.menu-link');
       var seeMoreButton = document.getElementById('see-more');
 
-      menuItems.forEach(function(item) {
-        item.classList.toggle('hidden-menu-item');
+      menuItems.forEach(function(item, index) {
+        if (index > 5) {
+          item.classList.toggle('hidden-menu-item');
+        }
       });
 
       if (seeMoreButton.innerHTML === 'See more') {
         seeMoreButton.innerHTML = 'Less';
       } else {
         seeMoreButton.innerHTML = 'See more';
+        toggleHiddenClass();
       }
+    }
+
+    function toggleHiddenClass() {
+      var menuItems = document.querySelectorAll('.menu-link');
+      menuItems.forEach(function(item, index) {
+        if (index > 5) {
+          item.classList.add('hidden-menu-item');
+        }
+      });
     }
   </script>
   <style>
