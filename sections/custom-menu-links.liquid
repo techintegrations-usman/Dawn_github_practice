@@ -21,7 +21,7 @@
   <div class="main-menu">
     <ul class="menu" id="parent">
       {% for link in menu-handle %}
-        <li class="menu-link {% if forloop.index > 5 %}hidden-menu-item{% endif %}">
+        <li class="menu-link {% if forloop.index > 4 %}hidden-menu-item{% endif %}">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
             <ul class="menu dropdown-child">
