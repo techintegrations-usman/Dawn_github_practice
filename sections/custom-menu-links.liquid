@@ -54,31 +54,32 @@
     </ul>
     <button id="see-more" onclick="toggleMenu()">See more</button>
   </div>
-</div>
-<script>
-     function toggleMenu() {
-    var menuItems = document.querySelectorAll('.menu-link');
-    var seeMoreButton = document.getElementById('see-more');
 
-    menuItems.forEach(function (item, index) {
-      if (index <= 5) {
-        if (seeMoreButton.innerHTML === 'Less') {
-          item.classList.remove('hidden-menu-item');
+  <script>
+       function toggleMenu() {
+      var menuItems = document.querySelectorAll('.menu-link');
+      var seeMoreButton = document.getElementById('see-more');
+
+      menuItems.forEach(function (item, index) {
+        if (index <= 5) {
+          if (seeMoreButton.innerHTML === 'Less') {
+            item.classList.remove('hidden-menu-item');
+          } else {
+            item.classList.remove('hidden-menu-item');
+          }
         } else {
-          item.classList.remove('hidden-menu-item');
+          item.classList.toggle('hidden-menu-item');
         }
-      } else {
-        item.classList.toggle('hidden-menu-item');
-      }
-    });
+      });
 
-    if (seeMoreButton.innerHTML === 'See more') {
-      seeMoreButton.innerHTML = 'Less';
-    } else {
-      seeMoreButton.innerHTML = 'See more';
+      if (seeMoreButton.innerHTML === 'See more') {
+        seeMoreButton.innerHTML = 'Less';
+      } else {
+        seeMoreButton.innerHTML = 'See more';
+      }
     }
-  }
-</script>
+  </script>
+</div>
 
 {% schema %}
 {
