@@ -56,23 +56,27 @@
   </div>
 
   <script>
-    function toggleMenu() {
+       function toggleMenu() {
       var menuItems = document.querySelectorAll('.menu-link');
       var seeMoreButton = document.getElementById('see-more');
 
       menuItems.forEach(function (item, index) {
-        // Instead of toggling, let's add the 'hidden-menu-item' class when 'Less' is clicked
-        if (index > 5) {
+        if (index <= 5) {
           if (seeMoreButton.innerHTML === 'Less') {
-            item.classList.add('hidden-menu-item');
+            item.classList.remove('hidden-menu-item');
           } else {
             item.classList.remove('hidden-menu-item');
           }
+        } else {
+          item.classList.toggle('hidden-menu-item');
         }
       });
 
-      // Toggle the button text
-      seeMoreButton.innerHTML = (seeMoreButton.innerHTML === 'See more') ? 'Less' : 'See more';
+      if (seeMoreButton.innerHTML === 'See more') {
+        seeMoreButton.innerHTML = 'Less';
+      } else {
+        seeMoreButton.innerHTML = 'See more';
+      }
     }
   </script>
 </div>
