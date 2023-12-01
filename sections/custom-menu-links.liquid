@@ -49,7 +49,7 @@
   </div>
 
   <script>
-    function toggleMenu() {
+        function toggleMenu() {
       var hiddenItems = document.querySelectorAll('.hidden-item');
       var seeMoreButton = document.getElementById('see-more');
 
@@ -61,6 +61,13 @@
         seeMoreButton.textContent = 'Less';
       } else {
         seeMoreButton.textContent = 'See more';
+
+        // Explicitly add hidden-item class to all hidden items when "Less" is clicked
+        hiddenItems.forEach(function (item) {
+          if (!item.classList.contains('hidden-item')) {
+            item.classList.add('hidden-item');
+          }
+        });
       }
     }
   </script>
