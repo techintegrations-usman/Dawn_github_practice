@@ -27,7 +27,7 @@
   <h1>Custom Menu Handle</h1>
 
   <div class="main-menu">
-    <ul class="menu" id="parent">
+    <ul class="menu">
       {% for link in menu-handle %}
         <li class="menu-link {% if forloop.index > 5 %}hidden-menu-item{% endif %}">
           <a href="{{ link.url }}">{{ link.title }}</a>
