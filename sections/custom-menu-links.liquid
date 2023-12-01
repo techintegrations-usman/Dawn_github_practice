@@ -1,24 +1,16 @@
 {%- style -%}
   #shopify-section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top}}px;
-      padding-bottom: {{ section.settings.padding_bottom}}px;
-      background-color:{{section.settings.section_bg}};
-
-    .hidden-menu-item {
-      display: none;
-    }
-
-    .show-menu-item {
-      display: list-item !important;
-    }
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background-color: {{ section.settings.section_bg }};
   }
 
-    @media only screen and (max-width: 749px) {
+  @media only screen and (max-width: 749px) {
       #shopify-section-{{ section.id }} {
-        padding-top: {{ section.settings.mb_padding_top }}px;
-        padding-bottom: {{ section.settings.mb_padding_bottom }}px;
+          padding-top: {{ section.settings.mb_padding_top }}px;
+          padding-bottom: {{ section.settings.mb_padding_bottom }}px;
       }
-    }
+  }
 {%- endstyle -%}
 
 {% assign menu-handle = linklists[section.settings.menu_handle].links %}
@@ -54,79 +46,92 @@
     </ul>
     <button id="see-more" onclick="toggleMenu()">See more</button>
   </div>
-</div>
-<script>
-     function toggleMenu() {
-    var menuItems = document.querySelectorAll('.menu-link');
-    var seeMoreButton = document.getElementById('see-more');
 
-    menuItems.forEach(function (item, index) {
-      if (index <= 5) {
-        if (seeMoreButton.innerHTML === 'Less') {
-          item.classList.remove('hidden-menu-item');
+  <script>
+    function toggleMenu() {
+        var menuItems = document.querySelectorAll('.menu-link');
+        var seeMoreButton = document.getElementById('see-more');
+
+        menuItems.forEach(function (item, index) {
+            if (index > 5) {
+                item.classList.toggle('hidden-menu-item');
+            }
+        });
+
+        if (seeMoreButton.innerHTML === 'See more') {
+            seeMoreButton.innerHTML = 'Less';
         } else {
-          item.classList.remove('hidden-menu-item');
+            seeMoreButton.innerHTML = 'See more';
         }
-      } else {
-        item.classList.toggle('hidden-menu-item');
-      }
-    });
-
-    if (seeMoreButton.innerHTML === 'See more') {
-      seeMoreButton.innerHTML = 'Less';
-    } else {
-      seeMoreButton.innerHTML = 'See more';
     }
-  }
-</script>
+  </script>
+
+  <style>
+    .hidden-menu-item {
+        display: none;
+    }
+
+    .show-menu-item {
+        display: list-item !important;
+    }
+
+    #see-more {
+        transition: opacity 0.3s ease; /* Add smooth transition for opacity */
+    }
+
+    #see-more:hover {
+        opacity: 0.7; /* Change opacity on hover for a visual effect */
+    }
+  </style>
+</div>
 
 {% schema %}
 {
   "name": "Custom Menu Links",
   "class": "custom-menu-link",
   "settings": [
-  {
-    "type" : "link_list",
-    "id" : "menu_handle",
-    "label" : "Menu Handle"
-  },
-  {
-    "type": "header",
-    "content": "Spacing Desktop"
-  },
-  {
-    "type": "number",
-    "id": "padding_top",
-    "label": "Top spacing",
-    "default": 0
-  },
-  {
-    "type": "number",
-    "id": "padding_bottom",
-    "label": "Bottom spacing",
-    "default": 0
-  },
-  {
-    "type": "header",
-    "content": "Spacing Mobile"
-  },
-  {
-    "type": "number",
-    "id": "mb_padding_top",
-    "label": "Top spacing",
-    "default": 0
-  },
-  {
-    "type": "number",
-    "id": "mb_padding_bottom",
-    "label": "Bottom spacing",
-    "default": 0
-  },
-  {
-    "type": "color",
-    "id": "section_bg",
-    "label": "Section Background"
-  }
+    {
+      "type" : "link_list",
+      "id" : "menu_handle",
+      "label" : "Menu Handle"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Desktop"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing Mobile"
+    },
+    {
+      "type": "number",
+      "id": "mb_padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "mb_padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Background"
+    }
   ],
   "presets":[
     {
