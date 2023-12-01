@@ -21,7 +21,7 @@
   <div class="main-menu">
     <ul class="menu" id="parent">
       {% for link in menu-handle %}
-        <li class="menu-link {% if forloop.index > 5 %}hidden-item{% endif %}">
+        <li class="menu-link {% if forloop.index > 5 %}hidden-menu-item{% endif %}">
           <a href="{{ link.url }}">{{ link.title }}</a>
           {% if link.links.size > 0 %}
             <ul class="menu dropdown-child">
@@ -44,47 +44,43 @@
         </li>
       {% endfor %}
     </ul>
-
     <button id="see-more" onclick="toggleMenu()">See more</button>
   </div>
 
   <script>
-        function toggleMenu() {
-      var hiddenItems = document.querySelectorAll('.hidden-item');
+    function toggleMenu() {
+      var menuItems = document.querySelectorAll('.menu-link');
       var seeMoreButton = document.getElementById('see-more');
 
-      hiddenItems.forEach(function (item) {
-        item.classList.toggle('hidden-item');
+      menuItems.forEach(function(item, index) {
+        if (index > 5) {
+          item.classList.toggle('hidden-menu-item');
+          item.classList.toggle('show-menu-item');
+        }
       });
 
-      if (seeMoreButton.textContent === 'See more') {
-        seeMoreButton.textContent = 'Less';
+      if (seeMoreButton.innerHTML === 'See more') {
+        seeMoreButton.innerHTML = 'Less';
       } else {
-        seeMoreButton.textContent = 'See more';
-
-        // Explicitly add hidden-item class to all hidden items when "Less" is clicked
-        hiddenItems.forEach(function (item) {
-          if (!item.classList.contains('hidden-item')) {
-            item.classList.add('hidden-item');
-          }
-        });
+        seeMoreButton.innerHTML = 'See more';
+        toggleHiddenClass();
       }
     }
+
+    function toggleHiddenClass() {
+      var menuItems = document.querySelectorAll('.menu-link.show-menu-item');
+      menuItems.forEach(function(item) {
+        item.classList.remove('hidden-menu-item', 'show-menu-item');
+      });
+    }
   </script>
-
   <style>
-    .hidden-item {
+    .hidden-menu-item {
       display: none;
-      transition: opacity 0.5s ease-in-out;
     }
 
-    .hidden-item.show-item {
+    .show-menu-item {
       display: list-item !important;
-      opacity: 1;
-    }
-
-    #see-more {
-      margin-top: 10px;
     }
   </style>
 </div>
