@@ -73,11 +73,13 @@
   </script>
   <style>
     .hidden-menu-item {
-      display: none;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
     }
 
     .show-menu-item {
       display: list-item !important;
+      opacity: 1;
     }
   </style>
 </div>
