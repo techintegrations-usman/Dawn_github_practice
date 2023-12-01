@@ -54,25 +54,24 @@
     </ul>
     <button id="see-more" onclick="toggleMenu()">See more</button>
   </div>
-
-  <script>
-    function toggleMenu() {
-      var menuItems = document.querySelectorAll('.menu-link');
-      var seeMoreButton = document.getElementById('see-more');
-
-      menuItems.forEach(function (item, index) {
-        if (index >= 5) {
-          if (seeMoreButton.innerHTML === 'Less') {
-            item.classList.add('hidden-menu-item');
-          } else {
-            item.classList.remove('hidden-menu-item');
-          }
-        }
-      });
-      seeMoreButton.innerHTML = (seeMoreButton.innerHTML === 'See more') ? 'Less' : 'See more';
-    }
-  </script>
 </div>
+<script>
+  function toggleMenu() {
+    var menuItems = document.querySelectorAll('.menu-link');
+    var seeMoreButton = document.getElementById('see-more');
+
+    menuItems.forEach(function (item, index) {
+      if (index >= 5) {
+        if (seeMoreButton.innerHTML === 'Less') {
+          item.classList.add('hidden-menu-item');
+        } else {
+          item.classList.remove('hidden-menu-item');
+        }
+      }
+    });
+    seeMoreButton.innerHTML = (seeMoreButton.innerHTML === 'See more') ? 'Less' : 'See more';
+  }
+</script>
 
 {% schema %}
 {
