@@ -48,13 +48,12 @@
   </div>
 
   <script>
-    function toggleMenu() {
+       function toggleMenu() {
       var menuItems = document.querySelectorAll('.menu-link');
       var seeMoreButton = document.getElementById('see-more');
 
-      menuItems.forEach(function(item, index) {
+      menuItems.forEach(function (item, index) {
         if (index > 5) {
-          item.classList.toggle('hidden-menu-item');
           item.classList.toggle('show-menu-item');
         }
       });
@@ -63,15 +62,14 @@
         seeMoreButton.innerHTML = 'Less';
       } else {
         seeMoreButton.innerHTML = 'See more';
-        toggleHiddenClass();
-      }
-    }
 
-    function toggleHiddenClass() {
-      var menuItems = document.querySelectorAll('.menu-link.show-menu-item');
-      menuItems.forEach(function(item) {
-        item.classList.remove('hidden-menu-item', 'show-menu-item');
-      });
+        // Explicitly remove hidden-menu-item class from all menu items when "Less" is clicked
+        menuItems.forEach(function (item) {
+          if (!item.classList.contains('hidden-menu-item')) {
+            item.classList.add('hidden-menu-item');
+          }
+        });
+      }
     }
   </script>
   <style>
