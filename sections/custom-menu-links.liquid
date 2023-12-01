@@ -49,7 +49,7 @@
   </div>
 
   <script>
-        function toggleMenu() {
+         function toggleMenu() {
       var hiddenItems = document.querySelectorAll('.hidden-item');
       var seeMoreButton = document.getElementById('see-more');
 
@@ -62,7 +62,7 @@
       } else {
         seeMoreButton.textContent = 'See more';
 
-        // Explicitly remove show-item class when "Less" is clicked
+        // Check if hidden item was previously visible
         hiddenItems.forEach(function (item) {
           if (item.classList.contains('show-item')) {
             item.classList.remove('show-item');
