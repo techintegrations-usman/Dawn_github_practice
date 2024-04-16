@@ -171,6 +171,7 @@
       "settings": {
         "hide_on_desktop": false,
         "hide_on_mobile": false,
+        "heading": "Featuerd Collection",
         "padding_top": 0,
         "padding_bottom": 0,
         "padding_top_m": 0,
