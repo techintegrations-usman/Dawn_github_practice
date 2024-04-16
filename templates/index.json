@@ -165,6 +165,18 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_featuer_collection_tabs_bYPQya": {
+      "type": "custom-featuer-collection-tabs",
+      "settings": {
+        "hide_on_desktop": false,
+        "hide_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "section_bg": ""
+      }
     }
   },
   "order": [
@@ -176,6 +188,7 @@
     "4ed69f83-6533-42f8-bed1-b9c76901499c",
     "287ef773-286a-40d2-b9dd-3b67e64d041b",
     "6e8764b4-cf4d-46e3-8c10-306cd4622d01",
-    "5addfc8b-9254-4b24-a3cc-4162071f39be"
+    "5addfc8b-9254-4b24-a3cc-4162071f39be",
+    "custom_featuer_collection_tabs_bYPQya"
   ]
 }
