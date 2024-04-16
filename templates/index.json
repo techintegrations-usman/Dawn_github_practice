@@ -172,7 +172,7 @@
         "collection_ALLPcP": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "jewelery",
             "products_per_page": 4
           }
         },
@@ -182,27 +182,11 @@
             "collection": "",
             "products_per_page": 4
           }
-        },
-        "collection_RcyNVk": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "products_per_page": 4
-          }
-        },
-        "collection_i7iXdi": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "products_per_page": 4
-          }
         }
       },
       "block_order": [
         "collection_ALLPcP",
-        "collection_khgeDW",
-        "collection_RcyNVk",
-        "collection_i7iXdi"
+        "collection_khgeDW"
       ],
       "settings": {
         "hide_on_desktop": false,
