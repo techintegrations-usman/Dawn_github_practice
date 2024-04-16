@@ -168,6 +168,42 @@
     },
     "custom_featuer_collection_tabs_bYPQya": {
       "type": "custom-featuer-collection-tabs",
+      "blocks": {
+        "collection_ALLPcP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_per_page": 4
+          }
+        },
+        "collection_khgeDW": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_per_page": 4
+          }
+        },
+        "collection_RcyNVk": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_per_page": 4
+          }
+        },
+        "collection_i7iXdi": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_per_page": 4
+          }
+        }
+      },
+      "block_order": [
+        "collection_ALLPcP",
+        "collection_khgeDW",
+        "collection_RcyNVk",
+        "collection_i7iXdi"
+      ],
       "settings": {
         "hide_on_desktop": false,
         "hide_on_mobile": false,
