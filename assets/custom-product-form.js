@@ -1,9 +1,6 @@
  document.addEventListener('DOMContentLoaded', function() {
-     var product = {
-         {
-             product | json
-         }
-     };
+     var product = { product | json };
+
      document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
          radio.addEventListener('change', () => {
              // Find Selected Options
