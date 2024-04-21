@@ -65,8 +65,8 @@
              }
 
          })
-     })
- });
+     });
+ 
 
 
  document.querySelector('#buy-cart-button').addEventListener('click', (e) => {
