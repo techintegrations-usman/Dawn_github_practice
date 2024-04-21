@@ -4,7 +4,7 @@
      document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
          radio.addEventListener('change', () => {
              // Find Selected Options
-             var selectedOptions = []
+             var selectedOptions = [];
              document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
                  selectedOptions.push(radio.value);
              })
