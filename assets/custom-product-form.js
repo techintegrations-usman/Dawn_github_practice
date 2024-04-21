@@ -3,7 +3,7 @@
          {
              product | json
          }
-     }
+     };
      document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
          radio.addEventListener('change', () => {
              // Find Selected Options
