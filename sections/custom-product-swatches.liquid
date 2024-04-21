@@ -136,7 +136,7 @@
 </div>
 
 <script>
-         document.addEventListener('DOMContentLoaded', function () {
+         
           var product = {{product | json}};
           document.querySelectorAll('.product-options input[type="radio"]').forEach(radio =>{
             radio.addEventListener('change' , () =>{
@@ -200,7 +200,7 @@
 
             })
           })
-            });
+            
 
 
               document.querySelector('#buy-cart-button').addEventListener('click', (e) => {
