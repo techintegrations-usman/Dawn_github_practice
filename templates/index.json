@@ -198,6 +198,33 @@
         "padding_bottom_m": 0,
         "section_bg": ""
       }
+    },
+    "custom_featuer_collection_tabs2_TCGdHW": {
+      "type": "custom-featuer-collection-tabs2",
+      "blocks": {
+        "tab_Jciibt": {
+          "type": "tab",
+          "settings": {
+            "collection": "jewelery",
+            "viewall": false
+          }
+        },
+        "tab_LXdeQ3": {
+          "type": "tab",
+          "settings": {
+            "collection": "shirts",
+            "viewall": false
+          }
+        }
+      },
+      "block_order": [
+        "tab_Jciibt",
+        "tab_LXdeQ3"
+      ],
+      "settings": {
+        "title": "",
+        "useslider": true
+      }
     }
   },
   "order": [
@@ -210,6 +237,7 @@
     "287ef773-286a-40d2-b9dd-3b67e64d041b",
     "6e8764b4-cf4d-46e3-8c10-306cd4622d01",
     "5addfc8b-9254-4b24-a3cc-4162071f39be",
-    "custom_featuer_collection_tabs_bYPQya"
+    "custom_featuer_collection_tabs_bYPQya",
+    "custom_featuer_collection_tabs2_TCGdHW"
   ]
 }
