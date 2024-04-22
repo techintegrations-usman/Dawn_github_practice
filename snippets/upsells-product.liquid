@@ -26,97 +26,30 @@
   </div>
 {% endif %}
 <script>
-         const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
-             addToCartFormsScript.forEach((form) => {
-              form.addEventListener("submit", async (event) => {
-              event.preventDefault();
-              event.stopPropagation();
-              const formData = new FormData(form);
-              const response = await fetch("{{ '/cart/add' | url }}", {
-                  method: "post",
-                  body: formData,
-              });
-              if (response.ok) {
-                  // Fetch updated cart content and update the drawer
-                  const updatedCartContent = await fetch("/cart.js");
-                  // Use the updatedCartContent to update the cart drawer dynamically
-                  const res = await fetch("/?section_id=cart-drawer");
-                  const text = await res.text();
-                  const html = document.createElement("div");
-                  html.innerHTML = text;
-                  const newBox = html.querySelector(".cart-drawer").innerHTML;
-                  document.querySelector(".cart-drawer").innerHTML = newBox;
-                  console.log("Product added successfully!");
-              } else {
-                  console.error("Failed to add product to the cart");
-              }
+     const addToCartFormsScript = document.querySelectorAll('form[action="/cart/add"]');
+         addToCartFormsScript.forEach((form) => {
+          form.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const formData = new FormData(form);
+          const response = await fetch("{{ '/cart/add' | url }}", {
+              method: "post",
+              body: formData,
           });
+          if (response.ok) {
+              // Fetch updated cart content and update the drawer
+              const updatedCartContent = await fetch("/cart.js");
+              // Use the updatedCartContent to update the cart drawer dynamically
+              const res = await fetch("/?section_id=cart-drawer");
+              const text = await res.text();
+              const html = document.createElement("div");
+              html.innerHTML = text;
+              const newBox = html.querySelector(".cart-drawer").innerHTML;
+              document.querySelector(".cart-drawer").innerHTML = newBox;
+              console.log("Product added successfully!");
+          } else {
+              console.error("Failed to add product to the cart");
+          }
       });
-
-    //   const addToCartForm = document.querySelector('form[action$="/cart/add"]');
-    //   addToCartForm.forEach(form) =>{
-    //     form.addEventListener("submit", async (e) =>{
-    //       e.preventDefault();
-    //       e.stopPropagation();
-    //       const formData = new FormData(addToCartForm);
-    //       const response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
-    //         method: 'POST',
-    //         headers: {
-    //           'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(formData)
-    //       });
-    //     });
-    //     .then( (response) =>() {
-    //               Fetch updated cart content and update the drawer
-    //               const updatedCartContent = await fetch("/cart.js");
-    //               // Use the updatedCartContent to update the cart drawer dynamically
-    //               const res = await fetch("/?section_id=cart-drawer");
-    //               const text = await res.text();
-    //               const html = document.createElement("div");
-    //               html.innerHTML = text;
-    //               const newBox = html.querySelector(".cart-drawer").innerHTML;
-    //               document.querySelector(".cart-drawer").innerHTML = newBox;
-    //               console.log("Product added successfully!");
-    //       return response.json();
-    //     })
-    //     .catch((error) => {
-    //       console.error('Error:', error);
-    // }
-    // }
-
-  //   const addToCartForm = document.querySelector('form[action$="/cart/add"]');
-  // addToCartForm.addEventListener("submit", async (e) => {
-  //     e.preventDefault();
-  //     e.stopPropagation();
-
-  //     const formData = new FormData(addToCartForm);
-
-  //     try {
-  //         const response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
-  //             method: 'POST',
-  //             headers: {
-  //                 'Content-Type': 'application/json'
-  //             },
-  //             body: JSON.stringify(Object.fromEntries(formData))
-  //         });
-
-  //         if (response.ok) {
-  //             // Fetch updated cart content and update the drawer
-  //             const updatedCartContent = await fetch("/cart.js");
-  //             // Use the updatedCartContent to update the cart drawer dynamically
-  //             const res = await fetch("/?section_id=cart-drawer");
-  //             const text = await res.text();
-  //             const html = document.createElement("div");
-  //             html.innerHTML = text;
-  //             const newBox = html.querySelector(".cart-drawer").innerHTML;
-  //             document.querySelector(".cart-drawer").innerHTML = newBox;
-  //             console.log("Product added successfully!");
-  //         } else {
-  //             console.error("Failed to add product to the cart");
-  //         }
-  //     } catch (error) {
-  //         console.error('Error:', error);
-  //     }
-  // });
+  });
 </script>
