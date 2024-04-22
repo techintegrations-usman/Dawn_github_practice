@@ -67,7 +67,7 @@
           body: JSON.stringify(formData)
         });
       });
-      .then(response ()=> {
+      .then( (response)=> {
                 Fetch updated cart content and update the drawer
                 const updatedCartContent = await fetch("/cart.js");
                 // Use the updatedCartContent to update the cart drawer dynamically
