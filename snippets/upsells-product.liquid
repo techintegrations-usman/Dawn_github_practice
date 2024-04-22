@@ -38,7 +38,7 @@
           });
           if (response.ok) {
               // Fetch updated cart content and update the drawer
-              const updatedCartContent = await fetch("/cart.js");
+              const updatedCartContent = await fetch("cart/add.js");
               // Use the updatedCartContent to update the cart drawer dynamically
               const res = await fetch("/?section_id=cart-drawer");
               const text = await res.text();
