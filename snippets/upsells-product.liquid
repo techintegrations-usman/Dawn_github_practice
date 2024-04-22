@@ -32,7 +32,7 @@
           event.preventDefault();
           event.stopPropagation();
           const formData = new FormData(form);
-          const response = await fetch("{{ '/cart/add' | url }}", {
+          const response = axios("{{ '/cart/add' | url }}", {
               method: "post",
               body: formData,
           });
