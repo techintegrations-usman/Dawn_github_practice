@@ -54,19 +54,24 @@
     // });
 
     let addToCartForm = document.querySelector('form[action$="/cart/add"]');
-      let formData = new FormData(addToCartForm);
-
-          fetch(window.Shopify.routes.root + 'cart/add.js', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      })
+    addToCartForm.forEach(form) =>{
+      form.addEventListener("submit", async (e) =>{
+        e.preventDefault();
+        e.stopPropagation();
+        const formData = new FormData(addToCartForm);
+        const response = await fetch(window.Shopify.routes.root + 'cart/add.js', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+      });
       .then(response => {
         return response.json();
       })
       .catch((error) => {
         console.error('Error:', error);
-  });
+  }
+  }
 </script>
