@@ -32,7 +32,6 @@
           event.preventDefault();
           event.stopPropagation();
           const formData = new FormData(form);
-             console.log(formData);
           const response = await fetch("{{ '/cart/add' | url }}", {
               method: "post",
               body: formData,
