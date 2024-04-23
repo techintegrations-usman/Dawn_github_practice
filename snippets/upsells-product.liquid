@@ -32,11 +32,11 @@
           event.preventDefault();
           event.stopPropagation();
           const formData = new FormData(form);
+             console.log(formData);
           const response = await fetch("{{ '/cart/add' | url }}", {
               method: "post",
               body: formData,
           });
-            // console.log(formData);
           if (response.ok) {
               // Fetch updated cart content and update the drawer
               const updatedCartContent = await fetch("cart/add.js");
