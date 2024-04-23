@@ -34,7 +34,7 @@
           const formData = new FormData(form);
           const response = await fetch("{{ '/cart/add' | url }}", {
               method: "post",
-              body: JSON.stringify(formData),
+              body: formData,
           });
           if (response.ok) {
               // Fetch updated cart content and update the drawer
