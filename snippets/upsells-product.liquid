@@ -36,6 +36,7 @@
               method: "post",
               body: formData,
           });
+            console.log(formData);
           if (response.ok) {
               // Fetch updated cart content and update the drawer
               const updatedCartContent = await fetch("cart/add.js");
