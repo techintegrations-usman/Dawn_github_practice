@@ -154,6 +154,7 @@
             >
               {{ card_product.title | escape }}
             </a>
+            {% render 'collection-atc' %}
           </h3>
           <div class="card-information">
             {%- if show_vendor -%}
@@ -362,7 +363,7 @@
           {%- endif -%}
         </div>
       </div>
-      <div class="card__content ffff">
+      <div class="card__content">
         <div class="card__information">
           <h3 class="card__heading card__heading--placeholder{% if settings.card_style == 'standard' %} h5{% endif %}">
             <a role="link" aria-disabled="true" class="full-unstyled-link">
