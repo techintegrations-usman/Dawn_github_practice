@@ -24,9 +24,9 @@
    //     });
    //   });
 
-   $(document).on('click', '.collection-cart', function(event) {
+   $(document).on('click', '#collection-cart', function(event) {
     event.preventDefault(); // Prevent default form submission
-    let getVariantId = $(this).siblings('.getVarId').val();
+    let getVariantId = $(this).siblings('#getVarId').val();
     let formObj = {
       quantity: 1,
       id: getVariantId
