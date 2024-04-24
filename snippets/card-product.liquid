@@ -200,8 +200,8 @@
             {%- endif -%}
 
             {% render 'price', product: card_product, price_class: '' %}
-            {% render 'collection-atc', product: card_product, variant: product.variants %}
           </div>
+          {% render 'collection-atc', product: card_product, variant: product.variants %}
         </div>
         {%- if show_quick_add -%}
           <div class="quick-add no-js-hidden">
