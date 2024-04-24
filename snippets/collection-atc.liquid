@@ -16,8 +16,11 @@
 </div>
 
 <script>
-  const productId = document.querrySelectorAll("#collection-cart-{{ product.id }}");
-  productId.addEventListener("click", () =>{
-    console.log("button Clicked");
-  });
+  const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
+
+    productId.forEach(item => {
+      item.addEventListener("click", () => {
+        console.log("button Clicked");
+      });
+    });
 </script>
