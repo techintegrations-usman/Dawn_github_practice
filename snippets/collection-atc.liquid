@@ -16,18 +16,20 @@
 </div>
 
 <script>
-    // const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
+      // const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
 
-    //   productId.forEach(item => {
-    //     item.addEventListener("click", () => {
-    //       console.log("button Clicked");
-    //     });
-    //   });
+      //   productId.forEach(item => {
+      //     item.addEventListener("click", () => {
+      //       console.log("button Clicked");
+      //     });
+      //   });
 
-    $(document).on('click', '#collection-cart-{{ product.id}}, function(){
-      let getvarintid $(this).parents('.collection-atc').find('#getVarId").val();
+      $(document).on('click', '#collection-cart-{{ product.id }}', function() {
+      let getvarintid = $(this).parents('.collection-atc').find('#getVarId').val();
       alert("ok");
       let formobj = {
-      quantity: 1, id: getvarintid
-  };
+          quantity: 1,
+          id: getvarintid
+      };
+  });
 </script>
