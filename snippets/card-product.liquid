@@ -154,7 +154,7 @@
             >
               {{ card_product.title | escape }}
             </a>
-            {% render 'collection-atc' %}
+            {% render 'collection-atc', product: card_product %}
           </h3>
           <div class="card-information">
             {%- if show_vendor -%}
