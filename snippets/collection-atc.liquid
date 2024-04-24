@@ -4,10 +4,13 @@
     <input type="hidden" value="{{ variant.id }}" id="getVarId">
   {% endfor %}
   <button type="submit" name="add-atc" id="collection-cart{{ product.id }}">
-    {% if avalible == true %}
-      Add
-    {% else %}
-      Sold Out
-    {% endif %}
+    {% comment %}
+      {% if avalible == true %}
+        Add
+      {% else %}
+        Sold Out
+      {% endif %}
+    {% endcomment %}
+    Add
   </button>
 </div>
