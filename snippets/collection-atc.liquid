@@ -3,7 +3,7 @@
   {% for variant in product.variants %}
     <input type="hidden" value="{{ variant.id }}" id="getVarId">
   {% endfor %}
-  <button type="submit" name="add-atc" id="collection-cart{{ product.id }}">
+  <button type="submit" name="add-atc" id="collection-cart-{{ product.id }}">
     {% comment %}
       {% if avalible == true %}
         Add
