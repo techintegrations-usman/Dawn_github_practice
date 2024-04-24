@@ -16,11 +16,17 @@
 </div>
 
 <script>
-  const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
+    // const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
 
-    productId.forEach(item => {
-      item.addEventListener("click", () => {
-        console.log("button Clicked");
-      });
-    });
+    //   productId.forEach(item => {
+    //     item.addEventListener("click", () => {
+    //       console.log("button Clicked");
+    //     });
+    //   });
+
+    $(document).on('click', '#collection-cart-{{ product.id}}, function(){
+      let getvarintid $(this).parents('.collection-cart').find('#variantgetid").val();
+      let formobj = {
+      quantity: 1, id: getvarintid
+  };
 </script>
