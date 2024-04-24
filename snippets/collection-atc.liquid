@@ -1,52 +1,47 @@
-{% assign avalible = product.selected_or_first_available_variant.avalible %}
+{% assign available = product.selected_or_first_available_variant.available %}
+
 <div class="collection-atc">
   {% for variant in product.variants %}
-    <input type="hidden" value="{{ variant.id }}" id="getVarId">
+    <input type="hidden" value="{{ variant.id }}" class="getVarId">
   {% endfor %}
-  <button type="button" name="add-atc" id="collection-cart-{{ product.id }}">
-    {% comment %}
-      {% if avalible == true %}
-        Add
-      {% else %}
-        Sold Out
-      {% endif %}
-    {% endcomment %}
-    Add
+  <button type="button" name="add-atc" class="collection-cart" data-product-id="{{ product.id }}">
+    {% if available %}
+      Add
+    {% else %}
+      Sold Out
+    {% endif %}
   </button>
 </div>
 
 <script>
-   // const productId = document.querySelectorAll("#collection-cart-{{ product.id }}");
+  $(document).ready(function() {
+    $(document).on('click', '.collection-cart', function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-   //   productId.forEach(item => {
-   //     item.addEventListener("click", () => {
-   //       console.log("button Clicked");
-   //     });
-   //   });
+      let getVariantId = $(this).siblings('.getVarId').val();
+      let formObj = {
+        quantity: 1,
+        id: getVariantId
+      };
 
-   $(document).on('click', '#collection-cart-{{ product.id }}', function() {
-   let getvarintid = $(this).parents('.collection-atc').find('#getVarId').val();
-   let formobj = {
-       quantity: 1,
-       id: getvarintid
-   };
-     $.ajax({
-     type: "POST",
-     url: "/cart/add.js",
-     cache: false,
-     data: formobj,
-     dataType: "json",
-     success: function(data) {
-     console.log('success');
-     $('.cartbtnicon').click();
-     $('cart-drawer').removeClass('is-empty');
-     $('.drawer_inner-empty').hide();
-     $('cart-drawer').load(location.href + " #CartDrawer");
-     $('#cart-icon-bubble').load(location.href" #cart-icon-bubble");
-     },
-     error: function (xhr, ajaxOption, thrownError) {
-       console.log("error");
-     }
-  });
+      $.ajax({
+        type: "POST",
+        url: "/cart/add.js",
+        cache: false,
+        data: formObj,
+        dataType: "json",
+        success: function(data) {
+          console.log('success');
+          $('.cartbtnicon').click();
+          $('#cart-drawer').removeClass('is-empty');
+          $('.drawer_inner-empty').hide();
+          $('#cart-drawer').load(location.href + " #CartDrawer");
+          $('#cart-icon-bubble').load(location.href + " #cart-icon-bubble");
+        },
+        error: function(xhr, ajaxOption, thrownError) {
+          console.log("error");
+        }
+      });
+    });
   });
 </script>
