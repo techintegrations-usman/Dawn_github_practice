@@ -38,13 +38,13 @@
           data: formobj,
           dataType: "json",
           success: function(data) {
-          },
           console.log('success');
           $('.cartbtnicon').click();
           $('cart-drawer').removeClass('is-empty');
           $('.drawer_inner-empty').hide();
           $('cart-drawer').load(location.href + " #CartDrawer");
           $('#cart-icon-bubble').load(location.href" #cart-icon-bubble");
+          },
           error: function (xhr, ajaxOption, thrownError) {
           }
           });
