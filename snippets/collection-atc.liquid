@@ -1,0 +1,12 @@
+{% assign avalible =product.selected_or_first_available_variant.avalible %}
+<div class="collection-atc">
+  {% for variant in product.variants %}
+    <input type="hidden" value="{{ variant.id }}" id="getVarId">
+  {% endfor %}
+  <button type="submit" name="add-atc" id="collection-cart{{ product.id }}">
+    {% if avalible == true %}
+      Add 
+      {% else %}
+      Sold Out
+      {% endif %}
+</div
