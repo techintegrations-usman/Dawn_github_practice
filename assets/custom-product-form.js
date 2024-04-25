@@ -24,6 +24,8 @@
 
             // Change product Form Variants Id
             document.querySelector('#product-id').value = matchedVariant.id;
+
+          
             //Update Cart Using Ajax
            fetch(window.Shopify.routes.root + 'cart/add.js', {
               method: 'POST',
