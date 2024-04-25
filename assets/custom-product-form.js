@@ -69,7 +69,6 @@
             })
             .then(response => {
               return response.json();
-              console.log("added");
             })
             .catch((error) => {
               console.error('Error:', error);
