@@ -52,6 +52,7 @@
 
   document.on('click', '#collection-cart-{{ product.id }}', function() {
    let getvarintid = this.parents('.collection-atc').find('#getVarId').value;
+    console.log("clicked");
    let formobj = {
        quantity: 1,
        id: getvarintid
