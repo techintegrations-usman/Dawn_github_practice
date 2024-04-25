@@ -1,4 +1,4 @@
-  var product = {{ product | json }};
+  var product = {{ product | json }}
     
 
     document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
