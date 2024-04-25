@@ -95,4 +95,3 @@
             document.querySelector('#quantity').value = currentVal - 1;
         }
     });
-});
