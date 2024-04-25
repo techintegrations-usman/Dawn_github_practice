@@ -1,13 +1,15 @@
-var product = {{ product | json }};
+  var product = {{ product | json }}
+    
 
-document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
-        radio.addEventListener('change', () => {
+        radio.addEventListener('change',  () => {
+            // Find Selected Options
             var selectedOptions = [];
             document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
                 selectedOptions.push(radio.value);
             });
 
+            // Finding Matched Variants
             var matchedVariant = product.variants.find(variant => {
                 var pass = true;
 
@@ -20,31 +22,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 return pass;
             });
 
+            // Change product Form Variants Id
             document.querySelector('#product-id').value = matchedVariant.id;
-            fetch(window.Shopify.routes.root + 'cart/add.js', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(matchedVariant)
+            //Update Cart Using Ajax
+           fetch(window.Shopify.routes.root + 'cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(matchedVariant)
             })
             .then(response => {
-                return response.json();
+              return response.json();
             })
             .catch((error) => {
-                console.error('Error:', error);
+              console.error('Error:', error);
             });
 
+          
+            // Change URL
             var urlParams = new URLSearchParams(window.location.search);
             urlParams.set('variant', matchedVariant.id);
             window.history.replaceState(null, null, window.location.pathname + '?' + urlParams.toString());
 
+            // Change prices
             document.querySelector('.product-price').textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}");
             document.querySelector('.product-compare').textContent = formatMoney(matchedVariant.compare_at_price, "{{ shop.money_format }}");
 
             matchedVariant.compare_at_price > matchedVariant.price ? document.querySelector('.product-compare').classList.remove('hide') :
                 document.querySelector('.product-compare').classList.add('hide');
 
+            // Change Images
             if (matchedVariant.featured_image) {
                 document.querySelector('#product-image').setAttribute('src', matchedVariant.featured_image.src);
                 document.querySelector('.thumbs-image li.selected').classList.remove('selected');
@@ -52,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.querySelectorAll('.thumbs-image li')[matchedVariant.featured_image.position].classList.add('selected');
             }
 
+            // Change Button
             var add = document.querySelector("#add-to-cart-button");
             var buy = document.querySelector("#buy-cart-button");
             if (matchedVariant.available) {
@@ -101,4 +110,3 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('#quantity').value = currentVal - 1;
         }
     });
-});
