@@ -24,29 +24,55 @@
    //     });
    //   });
 
-   $(document).on('click', '#collection-cart-{{ product.id }}', function() {
-   let getvarintid = $(this).parents('.collection-atc').find('#getVarId').val();
+  //  $(document).on('click', '#collection-cart-{{ product.id }}', function() {
+  //  let getvarintid = $(this).parents('.collection-atc').find('#getVarId').val();
+  //  let formobj = {
+  //      quantity: 1,
+  //      id: getvarintid
+  //  };
+  //    $.ajax({
+  //    type: "POST",
+  //    url: "/cart/add.js",
+  //    cache: false,
+  //    data: formobj,
+  //    dataType: "json",
+  //    success: function(data) {
+  //    console.log('success');
+  //    $('.cartbtnicon').click();
+  //    $('cart-drawer').removeClass('is-empty');
+  //    $('.drawer_inner-empty').hide();
+  //    $('cart-drawer').load(location.href + " #CartDrawer");
+  //    $('#cart-icon-bubble').load(location.href" #cart-icon-bubble");
+  //    },
+  //    error: function (xhr, ajaxOption, thrownError) {
+  //      console.log("error");
+  //    }
+  // });
+  // });
+
+  document.on('click', '#collection-cart-{{ product.id }}', function() {
+   let getvarintid = this.parents('.collection-atc').find('#getVarId').value;
    let formobj = {
        quantity: 1,
        id: getvarintid
    };
-     $.ajax({
-     type: "POST",
-     url: "/cart/add.js",
-     cache: false,
-     data: formobj,
-     dataType: "json",
-     success: function(data) {
-     console.log('success');
-     $('.cartbtnicon').click();
-     $('cart-drawer').removeClass('is-empty');
-     $('.drawer_inner-empty').hide();
-     $('cart-drawer').load(location.href + " #CartDrawer");
-     $('#cart-icon-bubble').load(location.href" #cart-icon-bubble");
-     },
-     error: function (xhr, ajaxOption, thrownError) {
-       console.log("error");
-     }
-  });
+     let request = new XMLHttpRequest();
+        request.open("POST", "/cart/add.js", true);
+        request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        request.onload = function() {
+        	if (this.status >= 200 && this.status < 400) {
+        		let data = this.response;
+        		console.log('success');
+             document.getElementByClassName("cartbtnicon").click();
+             $('cart-drawer').classList.remove("is-empty");
+             document.getElementByClassName("drawer_inner-empty").style.display = "none";
+             $('cart-drawer').load(location.href + " #CartDrawer");
+             document.getElementById("cart-icon-bubble").load(location.href" #cart-icon-bubble");
+        	}
+        }
+        request.onerror = function(xhr, ajaxOption, thrownError) {
+        	console.log("error");
+        };
+        request.send(formobj);
   });
 </script>
