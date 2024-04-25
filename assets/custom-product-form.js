@@ -2,7 +2,7 @@
     
 
     document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
-        radio.addEventListener('change', () => {
+        radio.addEventListener('change', async () => {
             // Find Selected Options
             var selectedOptions = [];
             document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
@@ -60,7 +60,7 @@
                 buy.disabled = true;
             }
           //Update Cart Using Ajax
-          fetch(window.Shopify.routes.root + 'cart/add.js', {
+         const res =  await fetch(window.Shopify.routes.root + 'cart/add.js', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json'
