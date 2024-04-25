@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 for (var i = 0; i < selectedOptions.length; i++) {
                     if (selectedOptions.indexOf(variant.options[i]) === -1) {
-                        pass : false;
+                        pass = false;
                         break;
                     }
                 }
