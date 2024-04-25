@@ -24,7 +24,22 @@
 
             // Change product Form Variants Id
             document.querySelector('#product-id').value = matchedVariant.id;
+            //Update Cart Using Ajax
+           fetch(window.Shopify.routes.root + 'cart/add.js', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(matchedVariant)
+            })
+            .then(response => {
+              return response.json();
+            })
+            .catch((error) => {
+              console.error('Error:', error);
+            });
 
+          
             // Change URL
             var urlParams = new URLSearchParams(window.location.search);
             urlParams.set('variant', matchedVariant.id);
@@ -59,20 +74,6 @@
                 buy.textContent = "Out Of Stock";
                 buy.disabled = true;
             }
-          //Update Cart Using Ajax
-           fetch(window.Shopify.routes.root + 'cart/add.js', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              body: JSON.stringify(matchedVariant)
-            })
-            .then(response => {
-              return response.json();
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
         });
     });
 
