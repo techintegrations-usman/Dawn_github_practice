@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Assuming 'product' is properly defined or passed into the script
     var product =
-        {
-            product | json
-        }
+        { product | json }
     };
 
     document.querySelectorAll('.product-options input[type="radio"]').forEach(radio => {
