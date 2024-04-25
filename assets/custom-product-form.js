@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Assuming 'product' is properly defined or passed into the script
-    var product = {
+    var product =
         {
             product | json
         }
