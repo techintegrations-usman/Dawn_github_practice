@@ -31,32 +31,45 @@
     <h3>{{ section.settings.second_num_2 }}</h3>
   </div>
 </div>
-
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Function to start the first counter when the page loads
-    startCounter('.first-count');
-    // Function to start the second counter when the page loads
-    startCounter('.second-counter');
+    // Function to start the counters when the page loads
+    startCounters();
   });
 
-  function startCounter(counterClass) {
-    var initialCount = parseInt(document.querySelector(counterClass + ' h2').textContent);
-    var finalCount = parseInt(document.querySelector(counterClass + ' h3').textContent);
+  function startCounters() {
+    var firstInitial = parseInt(document.querySelector('.first-count h2').textContent);
+    var firstFinal = parseInt(document.querySelector('.first-count h3').textContent);
+    var secondInitial = parseInt(document.querySelector('.second-counter h2').textContent);
+    var secondFinal = parseInt(document.querySelector('.second-counter h3').textContent);
 
-    if (isNaN(finalCount)) {
-      console.error("Please enter a valid final value.");
+    var firstDifference = Math.abs(firstFinal - firstInitial);
+    var secondDifference = Math.abs(secondFinal - secondInitial);
+
+    var maxDifference = Math.max(firstDifference, secondDifference);
+
+    if (isNaN(firstFinal) || isNaN(secondFinal)) {
+      console.error("Please enter valid final values.");
       return;
     }
 
-    var counterInterval = setInterval(function() {
-      if (initialCount < finalCount) {
-        initialCount++;
-        document.querySelector(counterClass + ' h2').textContent = initialCount;
+    var firstCounterInterval = setInterval(function() {
+      if (firstInitial < firstFinal) {
+        firstInitial++;
+        document.querySelector('.first-count h2').textContent = firstInitial;
       } else {
-        clearInterval(counterInterval);
+        clearInterval(firstCounterInterval);
       }
-    }, 50); // Adjust this value to control the speed of the counter (in milliseconds)
+    }, maxDifference * 1000 / firstDifference);
+
+    var secondCounterInterval = setInterval(function() {
+      if (secondInitial < secondFinal) {
+        secondInitial++;
+        document.querySelector('.second-counter h2').textContent = secondInitial;
+      } else {
+        clearInterval(secondCounterInterval);
+      }
+    }, maxDifference * 1000 / secondDifference);
   }
 </script>
 
