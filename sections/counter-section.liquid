@@ -55,7 +55,7 @@
     }
 
     // Define speed multiplier to increase speed
-    var speedMultiplier = 2; // Increase this value to increase speed
+    var speedMultiplier = 0.1; // Adjust this value to increase/decrease speed
 
     var firstCounterInterval = setInterval(function() {
       if (firstInitial < firstFinal) {
@@ -64,7 +64,7 @@
       } else {
         clearInterval(firstCounterInterval);
       }
-    }, (maxDifference * 1000 / firstDifference) * speedMultiplier); // Adjusted interval for first counter
+    }, (maxDifference  1000 / firstDifference)  speedMultiplier); // Adjusted interval for first counter
 
     var secondCounterInterval = setInterval(function() {
       if (secondInitial < secondFinal) {
@@ -73,7 +73,7 @@
       } else {
         clearInterval(secondCounterInterval);
       }
-    }, (maxDifference * 1000 / secondDifference) * speedMultiplier); // Adjusted interval for second counter
+    }, (maxDifference  1000 / secondDifference)  speedMultiplier); // Adjusted interval for second counter
   }
 </script>
 
