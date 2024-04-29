@@ -26,6 +26,32 @@
   <h3>{{ section.settings.second_num }}</h3>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to start the counter when the page loads
+    startCounter();
+  });
+
+  function startCounter() {
+    var initialCount = parseInt(document.querySelector(".counter-section h2").textContent);
+    var finalCount = parseInt(document.querySelector(".counter-section h3").textContent);
+
+    if (isNaN(finalCount)) {
+      console.error("Please enter a valid final value.");
+      return;
+    }
+
+    var counterInterval = setInterval(function() {
+      if (initialCount < finalCount) {
+        initialCount++;
+        document.querySelector(".counter-section h2").textContent = initialCount;
+      } else {
+        clearInterval(counterInterval);
+      }
+    }, 1000); // Adjust this value to control the speed of the counter (in milliseconds)
+  }
+</script>
+
 {% schema %}
 {
   "name": "Counter Section",
