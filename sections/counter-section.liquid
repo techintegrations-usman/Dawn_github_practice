@@ -34,13 +34,15 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Function to start the counter when the page loads
-    startCounter();
+    // Function to start the first counter when the page loads
+    startCounter('.first-count');
+    // Function to start the second counter when the page loads
+    startCounter('.second-counter');
   });
 
-  function startCounter() {
-    var initialCount = parseInt(document.querySelector(".counter-section h2").textContent);
-    var finalCount = parseInt(document.querySelector(".counter-section h3").textContent);
+  function startCounter(counterClass) {
+    var initialCount = parseInt(document.querySelector(counterClass + ' h2').textContent);
+    var finalCount = parseInt(document.querySelector(counterClass + ' h3').textContent);
 
     if (isNaN(finalCount)) {
       console.error("Please enter a valid final value.");
@@ -50,11 +52,11 @@
     var counterInterval = setInterval(function() {
       if (initialCount < finalCount) {
         initialCount++;
-        document.querySelector(".counter-section h2").textContent = initialCount;
+        document.querySelector(counterClass + ' h2').textContent = initialCount;
       } else {
         clearInterval(counterInterval);
       }
-    }, 100); // Adjust this value to control the speed of the counter (in milliseconds)
+    }, 1000); // Adjust this value to control the speed of the counter (in milliseconds)
   }
 </script>
 
