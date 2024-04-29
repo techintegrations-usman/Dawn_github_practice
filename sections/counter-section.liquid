@@ -53,8 +53,8 @@
       return;
     }
 
-    // Calculate speed multiplier based on maximum difference
-    var speedMultiplier = 0.5 * (maxDifference / 10); // Adjust this value to control overall speed
+    // Define speed multiplier to increase speed
+    var speedMultiplier = 0.1; // Adjust this value to increase/decrease speed
 
     var firstCounterInterval = setInterval(function() {
       if (firstInitial < firstFinal) {
