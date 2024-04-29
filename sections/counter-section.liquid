@@ -22,8 +22,14 @@
 {% endstyle %}
 
 <div class="counter-section">
-  <h2>{{ section.settings.firts_num }}</h2>
-  <h3>{{ section.settings.second_num }}</h3>
+  <div class="first-count">
+    <h2>{{ section.settings.firts_num }}</h2>
+    <h3>{{ section.settings.second_num }}</h3>
+  </div>
+  <div class="second-counter">
+    <h2>{{ section.settings.firts_num_2 }}</h2>
+    <h3>{{ section.settings.second_num_2 }}</h3>
+  </div>
 </div>
 
 <script>
@@ -79,6 +85,16 @@
     {
       "type" : "text",
       "id" : "second_num",
+      "label" : "Enter Second Value"
+    },
+    {
+      "type" : "text",
+      "id" : "firts_num_2",
+      "label" : "Enter Firts Value"
+    },
+    {
+      "type" : "text",
+      "id" : "second_nu-2",
       "label" : "Enter Second Value"
     },
     {
