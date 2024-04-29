@@ -66,7 +66,7 @@
       } else {
         clearInterval(firstCounterInterval);
       }
-    }, (maxDifference * 300 / firstDifference) * speedMultiplier); // Adjusted interval for first counter
+    }, (maxDifference * 100 / firstDifference) * speedMultiplier); // Adjusted interval for first counter
 
     var secondCounterInterval = setInterval(function() {
       if (secondInitial < secondFinal) {
@@ -75,7 +75,7 @@
       } else {
         clearInterval(secondCounterInterval);
       }
-    }, (maxDifference * 300 / secondDifference) * speedMultiplier); // Adjusted interval for second counter
+    }, (maxDifference * 100 / secondDifference) * speedMultiplier); // Adjusted interval for second counter
   }
 </script>
 
