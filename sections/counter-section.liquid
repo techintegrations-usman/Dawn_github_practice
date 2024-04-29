@@ -1,6 +1,102 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+
+    {% if section.settings.hide_on_desktop %}
+        display: none;
+    {% endif %}
+
   }
+  @media screen and (max-width:749px){
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_m }}px;
+      padding-bottom: {{ section.settings.padding_bottom_m }}px;
+      display: block;
+      {% if section.settings.hide_on_mobile %}
+        display: none;
+      {% endif %}
+    }
+  }
+{% endstyle %}
+
+<div class="counter-section">
+  <h2>{{ section.settings.firts_num }}</h2>
+  <h3>{{ section.settings.second_num }}</h3>
+</div>
+
+{% schema %}
+{
+  "name": "Counter Section",
+  "class": "custom-counter-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile"
+    },
+    {
+      "type" : "text",
+      "id" : "firts_num",
+      "label" : "Enter Firts Value"
+    },
+    {
+      "type" : "text",
+      "id" : "second_num",
+      "label" : "Enter Second Value"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Desktop"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing Mobile"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_m",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_m",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Counter Section"
+    }
+  ]
+}
 {% endschema %}
