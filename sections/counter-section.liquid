@@ -36,7 +36,6 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    // Function to start the counters when the page loads
     startCounters();
   });
 
@@ -55,9 +54,7 @@
       console.error("Please enter valid final values.");
       return;
     }
-
-    // Define speed multiplier to increase speed
-    var speedMultiplier = 0.1; // Adjust this value to increase/decrease speed
+    var speedMultiplier = 0.1;
 
     var firstCounterInterval = setInterval(function() {
       if (firstInitial < firstFinal) {
@@ -66,7 +63,7 @@
       } else {
         clearInterval(firstCounterInterval);
       }
-    }, (maxDifference * 100 / firstDifference) * speedMultiplier); // Adjusted interval for first counter
+    }, (maxDifference * 100 / firstDifference) * speedMultiplier);
 
     var secondCounterInterval = setInterval(function() {
       if (secondInitial < secondFinal) {
@@ -75,7 +72,7 @@
       } else {
         clearInterval(secondCounterInterval);
       }
-    }, (maxDifference * 100 / secondDifference) * speedMultiplier); // Adjusted interval for second counter
+    }, (maxDifference * 100 / secondDifference) * speedMultiplier);
   }
 </script>
 
