@@ -225,6 +225,20 @@
         "title": "",
         "useslider": true
       }
+    },
+    "counter_section_RwKdY8": {
+      "type": "counter-section",
+      "settings": {
+        "hide_on_desktop": false,
+        "hide_on_mobile": false,
+        "firts_num": "0",
+        "second_num": "20",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_m": 0,
+        "padding_bottom_m": 0,
+        "section_bg": ""
+      }
     }
   },
   "order": [
@@ -238,6 +252,7 @@
     "6e8764b4-cf4d-46e3-8c10-306cd4622d01",
     "5addfc8b-9254-4b24-a3cc-4162071f39be",
     "custom_featuer_collection_tabs_bYPQya",
-    "custom_featuer_collection_tabs2_TCGdHW"
+    "custom_featuer_collection_tabs2_TCGdHW",
+    "counter_section_RwKdY8"
   ]
 }
