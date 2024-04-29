@@ -31,6 +31,7 @@
     <h3>{{ section.settings.second_num_2 }}</h3>
   </div>
 </div>
+
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     // Function to start the counters when the page loads
@@ -54,7 +55,10 @@
     }
 
     // Define speed multiplier to increase speed
-    var speedMultiplier = 0.1; // Adjust this value to increase/decrease speed
+    var speedMultiplier = 1.5; // Increase this value to increase speed
+
+    // Calculate step value to match speed timing
+    var step = Math.round(secondDifference / maxDifference);
 
     var firstCounterInterval = setInterval(function() {
       if (firstInitial < firstFinal) {
@@ -67,7 +71,8 @@
 
     var secondCounterInterval = setInterval(function() {
       if (secondInitial < secondFinal) {
-        secondInitial++;
+        // Increment second counter by step
+        secondInitial += step;
         document.querySelector('.second-counter h2').textContent = secondInitial;
       } else {
         clearInterval(secondCounterInterval);
