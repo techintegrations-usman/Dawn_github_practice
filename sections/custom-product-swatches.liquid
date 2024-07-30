@@ -1,12 +1,299 @@
+{% style %}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    background: {{ section.settings.section_bg }};
+
+
+
+  }
+  @media screen and (max-width:749px){
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_m }}px;
+      padding-bottom: {{ section.settings.padding_bottom_m }}px;
+
+    }
+  }
+{% endstyle %}
+
+<div class="custom-product-template page-width">
+  <div class="product-images">
+    {% if product.selected_or_first_available_variant.featured_image %}
+      {% assign featured = product.selected_or_first_available_variant.featured_image %}
+      <img id="product-image" src="{{ featured | img_url: 'master' }}">
+    {% else %}
+      {% assign featured = product.featured_image %}
+      <img id="product-image" src="{{ featured | img_url: 'master' }}">
+    {% endif %}
+
+    <ul class="thumbs-image">
+      {% for image in product.images %}
+        <li class="{% if image == featured %} selected {% endif %}"><img src="{{ image | img_url:'300x' }}"></li>
+      {% endfor %}
+    </ul>
+    {% comment %}
+      {% for variant in product.variants %}
+        {% for image in variant.images %}
+          <img src="{{ image | img_url:master }}">
+        {% endfor %}
+      {% endfor %}
+    {% endcomment %}
+  </div>
+  <div class="product-info">
+    <h3>{{ product.title }}</h3>
+    {% if section.settings.hide_sku %}
+      <span class="variant-sku">SKU: {{ product.variants.first.sku }}</span>
+    {% endif %}
+    <div class="product-prices">
+      <p class="product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}hide {% endunless %}">
+        {{ product.selected_or_first_available_variant.compare_at_price | money }}
+      </p>
+      <p class="product-price">
+        {{ product.selected_or_first_available_variant.price | money }}
+      </p>
+    </div>
+
+    {% form 'product', product %}
+      <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      {% if product.variants.size > 1 %}
+        <div class="product-options">
+          {% for option in product.options_with_values %}
+            <fiedlset>
+              <legend>{{ option.name }}</legend>
+              <div class="option-with-values">
+                {% for value in option.values %}
+                  <div>
+                    <input
+                      {% if option.selected_value == value %}
+                        checked
+                      {% endif %}
+                      type="radio"
+                      name="{{  option.name}}"
+                      value="{{ value }}"
+                      id="{{ option.name | handlize }}-{{ value | handlize }}"
+                    >
+                    <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                      {{ value }}
+                    </label>
+                  </div>
+                {% endfor %}
+              </div>
+            </fiedlset>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <label class="custom-quantity" for="quantity">Quantity </label>
+      <div class="quantity-selctor">
+        <button type="button" class="qs-minus">
+          {% include 'icon-minus' %}
+        </button>
+        <input id="quantity" name="quantity" value="1" min="1" disabled class="quantity-selctor-ins">
+        <button type="button" class="qs-plus">
+          {% include 'icon-plus' %}
+        </button>
+      </div>
+      <div class="peoduct-atc">
+        <button
+          {% unless product.selected_or_first_available_variant.available %}
+            disabled
+          {% endunless %}
+          id="add-to-cart-button"
+        >
+          {% if product.selected_or_first_available_variant.available %}
+            Add to Cart
+          {% else %}
+            Out Of Stock
+          {% endif %}
+        </button>
+
+        <button
+          {% unless product.selected_or_first_available_variant.available %}
+            disabled
+          {% endunless %}
+          id="buy-cart-button"
+        >
+          {% if product.selected_or_first_available_variant.available %}
+            Buy It Now
+          {% else %}
+            Out Of Stock
+          {% endif %}
+        </button>
+      </div>
+
+      {% for item in product.metafields.custom.weight.value -%}
+        {{ item }}
+      {%- endfor %}
+    {% endform %}
+  </div>
+</div>
+
+<div class="supplier-section">
+  {% for supplier in shop.metafields.supplier.value %}
+    <img src="{{ supplier.photo | img_url:'200x' }}">
+    <h3>{{ supplier.title }}</h3>
+  {% endfor %}
+</div>
+
+<script>
+
+          var product = {{product | json}};
+          document.querySelectorAll('.product-options input[type="radio"]').forEach(radio =>{
+            radio.addEventListener('change' , () =>{
+              // Find Selected Options
+              var selectedOptions = []
+              document.querySelectorAll('.product-options input[type="radio"]:checked ').forEach(radio => {
+               selectedOptions.push(radio.value);
+              })
+
+              // Finding Matched Variants
+              var matchedVariant = product.variants.find(variant => {
+                var pass =true
+
+                for (var i = 0; i < selectedOptions.length; i++) {
+                  if (selectedOptions.indexOf(variant.options[i]) === -1) {
+                   pass = false;
+                   break;
+                  }
+               }
+                return pass ;
+              })
+              // Change product Form Varients Id
+              document.querySelector('#product-id').value = matchedVariant.id
+
+              //Change url
+              var url = new URLParse(window.location.href,true)
+              url.query.variant = matchedVariant.id
+              window.history.replaceState(null, null,url.toString())
+
+
+            //change prices
+              document.querySelector('.product-price').textContent = formatMoney(matchedVariant.price, "{{ shop.money_format }}");
+              document.querySelector('.product-compare').textContent = formatMoney(matchedVariant.compare_at_price, "{{ shop.money_format }}");
+
+              matchedVariant.compare_at_price > matchedVariant.price  ? document.querySelector('.product-compare').classList.remove('hide') :
+              document.querySelector('.product-compare').classList.add('hide');
+
+
+              // Change Images
+              if(matchedVariant.featuerd_image){
+                document.querySelector('#product-image').setAttribute('src', matchedVariant.featuerd_image.src);
+                document.querySelector('.thumbs-image li.selected').classList.remove('selected')
+
+                document.querySelectorAll('.thumbs-image li ')[matchedVariant.featuerd_image.postion].classList.add('selected')
+              }
+
+              // Change Button
+               var add = document.querySelector("#add-to-cart-button")
+               var buy = document.querySelector("#buy-cart-button")
+              if (matchedVariant.available){
+                add.textContent = "Add to Cart"
+                add.disabled = false
+                buy.textContent = "But It Now"
+                buy.disabled = false
+              }else{
+                add.textContent = "Out Of Stock"
+                add.disabled = true
+                buy.textContent = "Out Of Stock"
+                buy.disabled = true
+              }
+
+            })
+          })
+
+
+
+              document.querySelector('#buy-cart-button').addEventListener('click', (e) => {
+            e.preventDefault();
+
+            var form = document.querySelector('.shopify-product-form');
+
+            var input = document.createElement('input');
+            input.value = "/checkout";
+            input.type = "hidden";
+            input.name = "return_to";
+
+            form.appendChild(input);
+            form.submit();
+          });
+
+
+          document.querySelectorAll('.thumbs-image li').forEach(li => {
+          li.addEventListener('click', () => {
+            document.querySelector('.thumbs-image li.selected').classList.remove('selected');
+            li.classList.add('selected');
+            document.querySelector('#product-image').setAttribute('src', li.querySelector('img').getAttribute('src'));
+          });
+        });
+
+        document.querySelector('.qs-plus').addEventListener('click', () => {
+    var currentval = Number(document.querySelector('#quantity').value);
+    document.querySelector('#quantity').value = currentval + 1;
+
+    // Remove the disabled class when increasing the value
+    document.querySelector('.qs-minus').classList.remove('quantity__button_disabled');
+  });
+
+  document.querySelector('.qs-minus').addEventListener('click', () => {
+    var currentval = Number(document.querySelector('#quantity').value);
+    var quantityButton = document.querySelector('.qs-minus');
+
+    if (currentval > 1) {
+      document.querySelector('#quantity').value = currentval - 1;
+    }
+
+    // Toggle the class based on the current value
+    quantityButton.classList.toggle('quantity__button_disabled', currentval <= 1);
+  });
+</script>
+
 {% schema %}
 {
-  "name": "Section name",
-  "settings": []
+  "name": "Product Swatches",
+  "class": "custom-product-swatches",
+  "settings": [
+    {
+      "type" : "checkbox",
+      "id" : "hide_sku",
+      "label" : "Show SKU"
+    },
+    {
+      "type": "header",
+      "content": "Spacing Desktop"
+    },
+    {
+      "type": "number",
+      "id": "padding_top",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Spacing Mobile"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_m",
+      "label": "Top spacing",
+      "default": 0
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_m",
+      "label": "Bottom spacing",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Background"
+    }
+  ]
 }
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
