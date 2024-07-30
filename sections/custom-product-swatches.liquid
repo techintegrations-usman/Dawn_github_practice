@@ -53,6 +53,8 @@
       </p>
     </div>
 
+    {% comment %}
+
     {% form 'product', product %}
       <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% if product.variants.size > 1 %}
@@ -127,6 +129,20 @@
     {% endform %}
   </div>
 </div>
+{% endcomment %}
+
+    {% for product_option in product.options_with_values %}
+  <label>
+    {{ product_option.name }}
+    <select>
+      {% for value in product_option.values %}
+        <option {% if product_option.selected_value == value %}selected{% endif %}>
+          {{ value }}
+        </option>
+      {% endfor %}
+    </select>
+  </label>
+{% endfor %}
 
 <div class="supplier-section">
   {% for supplier in shop.metafields.supplier.value %}
