@@ -20,7 +20,6 @@
         <img src="{{ section.settings.image1 | img_url:'master' }}">
       </a>
     </div>
-    <h4>{{ section.settings.heading1 }}</h4>
   {% endif %}
   {% if section.settings.image2 != blank %}
     <div class="banner-image2">
@@ -41,11 +40,6 @@
       "type" : "image_picker",
       "id" : "image1",
       "label" : "Image"
-    },
-    {
-      "type": "text",
-      "id": "heading1",
-      "label": "Image One heading"
     },
     {
       "type" : "url",
