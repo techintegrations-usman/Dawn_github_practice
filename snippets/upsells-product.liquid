@@ -84,7 +84,6 @@
   document.querySelectorAll('form[action="/cart/add"]').forEach((form) => {
       form.addEventListener("submit", (event) => {
           event.preventDefault();
-          event.ststopPropagation();
           addToCart(form);
       });
   });
