@@ -55,7 +55,7 @@
 
     async function updateCartDrawer() {
       try {
-          const response = await fetch("/?sections=cart-drawer");
+          const response = await fetch("/?sections=CartDrawer");
           if (!response.ok) throw new Error("Failed to fetch cart drawer section");
           const data = await response.json();
           const cartDrawerHtml = data['cart-drawer'];
