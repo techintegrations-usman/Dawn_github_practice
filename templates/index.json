@@ -1,9 +1,18 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "bc6dd337-01ac-4ed1-bb69-4d1755ea38c7": {
       "type": "custom-messaeg-banner",
       "settings": {
-        "banner": "shopify:\/\/shop_images\/pexels-pavel-danilyuk-6461199_2.jpg",
+        "banner": "shopify://shop_images/pexels-pavel-danilyuk-6461199_2.jpg",
         "padding_top": 36,
         "padding_bottom": 36,
         "mb_padding_top": 36,
@@ -24,7 +33,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -37,7 +46,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/pexels-mart-production-7679438.jpg",
+        "image": "shopify://shop_images/pexels-mart-production-7679438.jpg",
         "image_overlay_opacity": 40,
         "image_height": "medium",
         "desktop_content_position": "middle-center",
@@ -81,10 +90,10 @@
     "a7d2b0a2-8711-4b55-869e-be316582788b": {
       "type": "custom-banner",
       "settings": {
-        "image1": "shopify:\/\/shop_images\/pexels-andrea-piacquadio-3755706.jpg",
-        "image1_url": "shopify:\/\/products\/casual-shirt",
-        "image2": "shopify:\/\/shop_images\/pexels-rachel-claire-5490970.jpg",
-        "image2_url": "shopify:\/\/products\/red-shirts",
+        "image1": "shopify://shop_images/pexels-andrea-piacquadio-3755706.jpg",
+        "image1_url": "shopify://products/casual-shirt",
+        "image2": "shopify://shop_images/pexels-rachel-claire-5490970.jpg",
+        "image2_url": "shopify://products/red-shirts",
         "padding_top": 100,
         "padding_bottom": 36,
         "padding_left": 8,
@@ -108,8 +117,7 @@
     "287ef773-286a-40d2-b9dd-3b67e64d041b": {
       "type": "custom__featuerd-products",
       "disabled": true,
-      "settings": {
-      }
+      "settings": {}
     },
     "6e8764b4-cf4d-46e3-8c10-306cd4622d01": {
       "type": "custom-menu-links",
@@ -135,7 +143,7 @@
         "template--20500029309241__5addfc8b-9254-4b24-a3cc-4162071f39be-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "text_style": "body"
           }
         },
@@ -249,7 +257,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -258,7 +266,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -267,7 +275,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -276,7 +284,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -285,7 +293,7 @@
           "type": "column",
           "settings": {
             "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
             "link_label": "",
             "link": ""
           }
@@ -314,6 +322,23 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "featured_blog_FzJmtH": {
+      "type": "featured-blog",
+      "settings": {
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "blog": "news",
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -329,6 +354,7 @@
     "custom_featuer_collection_tabs_bYPQya",
     "custom_featuer_collection_tabs2_TCGdHW",
     "counter_section_RwKdY8",
-    "multicolumn_MFMDPB"
+    "multicolumn_MFMDPB",
+    "featured_blog_FzJmtH"
   ]
 }
