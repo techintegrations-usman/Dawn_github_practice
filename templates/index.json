@@ -339,6 +339,10 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_padding_section_AerzQC": {
+      "type": "custom-padding-section",
+      "settings": {}
     }
   },
   "order": [
@@ -355,6 +359,7 @@
     "custom_featuer_collection_tabs2_TCGdHW",
     "counter_section_RwKdY8",
     "multicolumn_MFMDPB",
-    "featured_blog_FzJmtH"
+    "featured_blog_FzJmtH",
+    "custom_padding_section_AerzQC"
   ]
 }
