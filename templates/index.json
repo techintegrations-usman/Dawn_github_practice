@@ -342,7 +342,126 @@
     },
     "custom_padding_section_AerzQC": {
       "type": "custom-padding-section",
-      "settings": {}
+      "settings": {
+        "color_scheme": ""
+      }
+    },
+    "custom_padding_section_nHegz3": {
+      "type": "custom-padding-section",
+      "blocks": {
+        "group_AQT3im": {
+          "type": "group",
+          "settings": {
+            "color_scheme": ""
+          },
+          "blocks": {
+            "group_y6Ec6x": {
+              "type": "group",
+              "settings": {
+                "color_scheme": ""
+              },
+              "blocks": {
+                "group_7Ar6P9": {
+                  "type": "group",
+                  "settings": {
+                    "color_scheme": "scheme-3"
+                  },
+                  "blocks": {
+                    "text_EN6bPr": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<h3>Hello, world!</h3>",
+                        "alignment": "left"
+                      }
+                    },
+                    "text_AWiNB4": {
+                      "type": "text",
+                      "settings": {
+                        "text": "<p>How's it going?</p>",
+                        "alignment": "left"
+                      }
+                    }
+                  },
+                  "block_order": [
+                    "text_EN6bPr",
+                    "text_AWiNB4"
+                  ]
+                }
+              },
+              "block_order": [
+                "group_7Ar6P9"
+              ]
+            },
+            "group_EbEVQi": {
+              "type": "group",
+              "settings": {
+                "color_scheme": ""
+              }
+            },
+            "text_Vj79BC": {
+              "type": "text",
+              "settings": {
+                "text": "",
+                "alignment": "left"
+              }
+            },
+            "text_azzjjK": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Hello, world!</p>",
+                "alignment": "left"
+              }
+            },
+            "group_NGH8cA": {
+              "type": "group",
+              "settings": {
+                "color_scheme": "scheme-3"
+              },
+              "blocks": {
+                "text_k9cFgn": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<h3>Hello, world!</h3>",
+                    "alignment": "left"
+                  }
+                },
+                "text_6x3xXQ": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<p>How's it going?</p>",
+                    "alignment": "left"
+                  }
+                }
+              },
+              "block_order": [
+                "text_k9cFgn",
+                "text_6x3xXQ"
+              ]
+            }
+          },
+          "block_order": [
+            "group_y6Ec6x",
+            "group_EbEVQi",
+            "text_Vj79BC",
+            "text_azzjjK",
+            "group_NGH8cA"
+          ]
+        },
+        "text_YiMwdM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Hello, world!</p>",
+            "alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "group_AQT3im",
+        "text_YiMwdM"
+      ],
+      "settings": {
+        "color_scheme": ""
+      }
     }
   },
   "order": [
@@ -360,6 +479,7 @@
     "counter_section_RwKdY8",
     "multicolumn_MFMDPB",
     "featured_blog_FzJmtH",
-    "custom_padding_section_AerzQC"
+    "custom_padding_section_AerzQC",
+    "custom_padding_section_nHegz3"
   ]
 }
