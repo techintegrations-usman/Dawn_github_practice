@@ -67,35 +67,27 @@
           {% comment %}
             Updated Logic that support high variants for shopify
           {% endcomment %}
-          {% for option in product.options_with_values %}
-            <fieldset>
-              <legend>{{ option.name }}</legend>
-              <div class="option-with-values">
-                {% for value in option.values %}
-                  <div>
-                    <input
-                      {% if option.selected_value == value %}
-                        checked
-                      {% endif %}
-                      type="radio"
-                      name="{{ option.name }}"
-                      value="{{ value }}"
-                      id="{{ option.name | handleize }}-{{ value | handleize }}"
-                      {% unless value.available %}
-                        class="disabled"
-                        disabled
-                      {% endunless %}
-                      data-option-value-id="{{ value.id }}"
-                      data-product-url="{{ value.product_url }}"
-                    >
-                    <label for="{{ option.name | handleize }}-{{ value | handleize }}">
-                      {{ value }}
-                    </label>
-                  </div>
-                {% endfor %}
-              </div>
-            </fieldset>
-          {% endfor %}
+          {%- for option in product.options_with_values -%}
+            {%- for option_value in option.values -%}
+              <input
+                id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}"
+                type="radio"
+                name="{{ option.name }}-{{ option.position }}"
+                value="{{ option_value | escape }}"
+                {% if option_value.selected %}
+                  checked
+                {% endif %}
+                {% unless option_value.available %}
+                  class="disabled"
+                {% endunless %}
+                data-product-url="{{ option_value.product_url }}"
+                data-option-value-id="{{ option_value.id }}"
+              >
+              <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 -}}">
+                {{ option_value -}}
+              </label>
+            {%- endfor -%}
+          {%- endfor -%}
         </div>
       {% endif %}
 
