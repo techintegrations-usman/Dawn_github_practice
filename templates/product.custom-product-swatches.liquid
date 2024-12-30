@@ -38,8 +38,38 @@
       <input id="product-id" type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
       {% if product.variants.size > 1 %}
         <div class="product-options">
+          {% comment %}
+
+            {% for option in product.options_with_values %}
+              <fiedlset>
+                <legend>{{ option.name }}</legend>
+                <div class="option-with-values">
+                  {% for value in option.values %}
+                    <div>
+                      <input
+                        {% if option.selected_value == value %}
+                          checked
+                        {% endif %}
+                        type="radio"
+                        name="{{  option.name}}"
+                        value="{{ value }}"
+                        id="{{ option.name | handlize }}-{{ value | handlize }}"
+                      >
+                      <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                        {{ value }}
+                      </label>
+                    </div>
+                  {% endfor %}
+                </div>
+              </fiedlset>
+            {% endfor %}
+          {% endcomment %}
+
+          {% comment %}
+            Updated Logic that support high variants for shopify
+          {% endcomment %}
           {% for option in product.options_with_values %}
-            <fiedlset>
+            <fieldset>
               <legend>{{ option.name }}</legend>
               <div class="option-with-values">
                 {% for value in option.values %}
@@ -49,17 +79,23 @@
                         checked
                       {% endif %}
                       type="radio"
-                      name="{{  option.name}}"
+                      name="{{ option.name }}"
                       value="{{ value }}"
-                      id="{{ option.name | handlize }}-{{ value | handlize }}"
+                      id="{{ option.name | handleize }}-{{ value | handleize }}"
+                      {% unless value.available %}
+                        class="disabled"
+                        disabled
+                      {% endunless %}
+                      data-option-value-id="{{ value.id }}"
+                      data-product-url="{{ value.product_url }}"
                     >
-                    <label for="{{ option.name | handlize }}-{{ value  | handlize }}">
+                    <label for="{{ option.name | handleize }}-{{ value | handleize }}">
                       {{ value }}
                     </label>
                   </div>
                 {% endfor %}
               </div>
-            </fiedlset>
+            </fieldset>
           {% endfor %}
         </div>
       {% endif %}
