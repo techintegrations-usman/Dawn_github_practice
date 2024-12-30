@@ -39,7 +39,6 @@
       {% if product.variants.size > 1 %}
         <div class="product-options">
           {% comment %}
-
             {% for option in product.options_with_values %}
               <fiedlset>
                 <legend>{{ option.name }}</legend>
@@ -87,7 +86,7 @@
                         disabled
                       {% endunless %}
                       data-option-value-id="{{ value.id }}"
-                      data-product-url="{{ value.product_url }}"
+                      data-product-url="{{ product_url }}"
                     >
                     <label for="{{ option.name | handleize }}-{{ value | handleize }}">
                       {{ value }}
