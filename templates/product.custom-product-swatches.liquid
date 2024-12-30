@@ -92,6 +92,9 @@
                       {{ value }}
                     </label>
                   </div>
+                  <script type="application/json">
+                    {{ option_value.variant | json }}
+                  </script>
                 {% endfor %}
               </div>
             </fieldset>
