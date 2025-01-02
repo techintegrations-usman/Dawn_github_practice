@@ -150,7 +150,7 @@
 
 <div class="supplier-section">
   {% for supplier in shop.metafields.supplier.value %}
-    <img src="{{ supplier.photo | img_url:'200x' }}">
+    <img src="{{ supplier.photo | image_url: width: 360 }}">
     <h3>{{ supplier.title }}</h3>
   {% endfor %}
 </div>
