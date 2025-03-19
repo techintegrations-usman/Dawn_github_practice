@@ -1,6 +1,28 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Custom Blocks Section",
+  "class": "blocks-csutom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+    },
+    {
+      "type": "text",
+      "id": "btn_text",
+      "label": "Button Text",
+    },
+    {
+      "type": "url",
+      "id": "btn_url",
+      "label": "Button URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom BLocks",
+    }
+  ]
+}
 {% endschema %}
