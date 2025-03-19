@@ -1,6 +1,14 @@
+{{ block.settings.image | img_tag }}
 {% schema %}
-  {
-    "name": "Block name",
-    "settings": []
-  }
+{
+  "name": "Image",
+  "class": "block-image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }
+  ]
+}
 {% endschema %}
