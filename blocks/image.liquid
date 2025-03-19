@@ -1,4 +1,7 @@
-{{ block.settings.image | img_tag }}
+{% if block.settings.image != blank %}
+  {{ block.settings.image | img_tag }}
+{% endif %}
+
 {% schema %}
 {
   "name": "Image",
